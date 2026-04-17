@@ -23,7 +23,7 @@ if (headerMount) {
               <path d="M9.75 21v-6h4.5v6" />
             </svg>
           </span>
-          <span>Charles M. Daniel.</span>
+          <span>Charles M. Daniel</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
