@@ -81,6 +81,105 @@ if (navToggle && siteHeader) {
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const pdfDocuments = {
+  "39-rebrands-later": {
+    filename: "39 Rebrands Later....pdf",
+    mimeType: "application/pdf",
+    parts: [
+      "pdf-parts/39-rebrands-later.part1.txt",
+      "pdf-parts/39-rebrands-later.part2.txt",
+      "pdf-parts/39-rebrands-later.part3.txt",
+      "pdf-parts/39-rebrands-later.part4.txt",
+      "pdf-parts/39-rebrands-later.part5.txt"
+    ]
+  }
+};
+
+const pdfUrlCache = new Map();
+
+const decodeBase64ToBlob = (base64, mimeType) => {
+  const binary = atob(base64);
+  const length = binary.length;
+  const bytes = new Uint8Array(length);
+
+  for (let index = 0; index < length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+
+  return new Blob([bytes], { type: mimeType });
+};
+
+const resolvePdfUrl = async (documentId) => {
+  if (pdfUrlCache.has(documentId)) {
+    return pdfUrlCache.get(documentId);
+  }
+
+  const config = pdfDocuments[documentId];
+
+  if (!config) {
+    throw new Error(`Unknown PDF document: ${documentId}`);
+  }
+
+  const parts = await Promise.all(
+    config.parts.map(async (path) => {
+      const response = await fetch(path);
+
+      if (!response.ok) {
+        throw new Error(`Unable to load ${path}`);
+      }
+
+      return response.text();
+    })
+  );
+
+  const blob = decodeBase64ToBlob(parts.join(""), config.mimeType);
+  const objectUrl = URL.createObjectURL(blob);
+
+  pdfUrlCache.set(documentId, objectUrl);
+
+  return objectUrl;
+};
+
+document.querySelectorAll("[data-pdf-document]").forEach((link) => {
+  link.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const documentId = link.dataset.pdfDocument;
+    const action = link.dataset.pdfAction || "read";
+    const config = pdfDocuments[documentId];
+
+    if (!documentId || !config) {
+      return;
+    }
+
+    const originalLabel = link.textContent;
+    link.textContent = "Loading...";
+    link.setAttribute("aria-disabled", "true");
+
+    try {
+      const objectUrl = await resolvePdfUrl(documentId);
+
+      if (action === "download") {
+        const temporaryLink = document.createElement("a");
+        temporaryLink.href = objectUrl;
+        temporaryLink.download = config.filename;
+        temporaryLink.click();
+      } else {
+        window.open(objectUrl, "_blank", "noopener");
+      }
+    } catch (error) {
+      console.error(error);
+      link.textContent = "Unavailable";
+    } finally {
+      link.setAttribute("aria-disabled", "false");
+    }
+
+    if (link.textContent !== "Unavailable") {
+      link.textContent = originalLabel;
+    }
+  });
+});
+
 if (prefersReducedMotion) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
