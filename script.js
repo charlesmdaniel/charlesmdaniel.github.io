@@ -27,12 +27,10 @@ if (headerMount) {
         <a class="brand-title" href="index.html">Charles M. Daniel</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 9h16" />
-            <path d="M4 9c2.2 7 13.8 7 16 0" />
-            <path d="M6 9c1.4 4.9 10.6 4.9 12 0" />
-            <ellipse cx="9.5" cy="12.1" rx=".65" ry=".95" fill="currentColor" stroke="none" />
-            <ellipse cx="12" cy="13.1" rx=".65" ry=".95" fill="currentColor" stroke="none" />
-            <ellipse cx="14.5" cy="12.1" rx=".65" ry=".95" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="12" r="7.5" />
+            <circle cx="9.4" cy="10.2" r=".65" fill="currentColor" stroke="none" />
+            <circle cx="14.6" cy="10.2" r=".65" fill="currentColor" stroke="none" />
+            <path d="M9 13.4c.8 1 1.8 1.5 3 1.5s2.2-.5 3-1.5" />
           </svg>
         </button>
         <nav class="site-nav" aria-label="Primary">
