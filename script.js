@@ -85,13 +85,8 @@ const pdfDocuments = {
   "39-rebrands-later": {
     filename: "39 Rebrands Later....pdf",
     mimeType: "application/pdf",
-    parts: [
-      "pdf-parts/39-rebrands-later.part1.txt",
-      "pdf-parts/39-rebrands-later.part2.txt",
-      "pdf-parts/39-rebrands-later.part3.txt",
-      "pdf-parts/39-rebrands-later.part4.txt",
-      "pdf-parts/39-rebrands-later.part5.txt"
-    ]
+    basePath: "pdf-parts-small/39-rebrands-later.part",
+    partCount: 31
   }
 };
 
@@ -120,8 +115,13 @@ const resolvePdfUrl = async (documentId) => {
     throw new Error(`Unknown PDF document: ${documentId}`);
   }
 
+  const partPaths = Array.from({ length: config.partCount }, (_, index) => {
+    const suffix = String(index + 1).padStart(2, "0");
+    return `${config.basePath}${suffix}.txt`;
+  });
+
   const parts = await Promise.all(
-    config.parts.map(async (path) => {
+    partPaths.map(async (path) => {
       const response = await fetch(path);
 
       if (!response.ok) {
