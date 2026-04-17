@@ -1,31 +1,104 @@
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.site-nav');
+const navigation = [
+  { id: "home", label: "Home", href: "index.html" },
+  { id: "system", label: "System", href: "system.html" },
+  { id: "work", label: "Work", href: "work.html" },
+  { id: "writing", label: "Writing", href: "writing.html" },
+  { id: "contact", label: "Contact", href: "contact.html" }
+];
 
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+const currentPage = document.body.dataset.page || "home";
+const headerMount = document.querySelector("[data-site-header]");
+const footerMount = document.querySelector("[data-site-footer]");
+
+if (headerMount) {
+  headerMount.innerHTML = `
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Narrative Operating System home">
+          <span class="brand-mark">NO</span>
+          <span>Narrative Operating System</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+          ${navigation
+            .map(
+              (item) =>
+                `<a href="${item.href}" class="${item.id === currentPage ? "is-active" : ""}">${item.label}</a>`
+            )
+            .join("")}
+        </nav>
+      </div>
+    </header>
+  `;
+}
+
+if (footerMount) {
+  footerMount.innerHTML = `
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>Minimal interface for narrative architecture and long-horizon systems.</p>
+        <div class="footer-links">
+          <a href="system.html">System</a>
+          <a href="work.html">Work</a>
+          <a href="writing.html">Writing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+const siteHeader = document.querySelector(".site-header");
+const navToggle = document.querySelector(".nav-toggle");
+
+if (siteHeader) {
+  const syncHeaderState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+  };
+
+  syncHeaderState();
+  window.addEventListener("scroll", syncHeaderState, { passive: true });
+}
+
+if (navToggle && siteHeader) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.querySelectorAll(".site-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteHeader.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
   });
 }
 
-const page = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.site-nav a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === page || (page === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-});
+const revealItems = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const scenarios = {
-  founder: 'You need to follow up after a strong first conversation with a founder.',
-  recruiter: 'A recruiter replied positively. You need to respond with clarity and momentum.',
-  network: 'You met a high-value contact and need to move the relationship forward without forcing it.'
-};
+if (prefersReducedMotion) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.16,
+      rootMargin: "0px 0px -48px 0px"
+    }
+  );
 
-const scenarioText = document.getElementById('scenarioText');
-document.querySelectorAll('[data-scenario]').forEach(button => {
-  button.addEventListener('click', () => {
-    const key = button.getAttribute('data-scenario');
-    if (scenarioText && scenarios[key]) scenarioText.textContent = scenarios[key];
+  revealItems.forEach((item, index) => {
+    item.style.transitionDelay = `${Math.min(index * 45, 240)}ms`;
+    observer.observe(item);
   });
-});
+}
