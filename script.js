@@ -83,7 +83,6 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 const pdfDocuments = {
   "39-rebrands-later": {
-    filename: "39 Rebrands Later....pdf",
     mimeType: "application/pdf",
     basePath: "pdf-parts-small/39-rebrands-later.part",
     partCount: 31
@@ -145,7 +144,6 @@ document.querySelectorAll("[data-pdf-document]").forEach((link) => {
     event.preventDefault();
 
     const documentId = link.dataset.pdfDocument;
-    const action = link.dataset.pdfAction || "read";
     const config = pdfDocuments[documentId];
 
     if (!documentId || !config) {
@@ -158,15 +156,7 @@ document.querySelectorAll("[data-pdf-document]").forEach((link) => {
 
     try {
       const objectUrl = await resolvePdfUrl(documentId);
-
-      if (action === "download") {
-        const temporaryLink = document.createElement("a");
-        temporaryLink.href = objectUrl;
-        temporaryLink.download = config.filename;
-        temporaryLink.click();
-      } else {
-        window.open(objectUrl, "_blank", "noopener");
-      }
+      window.open(objectUrl, "_blank", "noopener");
     } catch (error) {
       console.error(error);
       link.textContent = "Unavailable";
