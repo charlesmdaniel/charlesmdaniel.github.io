@@ -16,7 +16,13 @@ if (headerMount) {
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html" aria-label="Charles M. Daniel home">
-          <span class="brand-mark">NO</span>
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5 12 3l9 7.5" />
+              <path d="M5.25 9.5V21h13.5V9.5" />
+              <path d="M9.75 21v-6h4.5v6" />
+            </svg>
+          </span>
           <span>Charles M. Daniel.</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
