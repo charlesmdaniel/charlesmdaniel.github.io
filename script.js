@@ -15,9 +15,9 @@ if (headerMount) {
   headerMount.innerHTML = `
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="Narrative Operating System home">
+        <a class="brand" href="index.html" aria-label="Charles M. Daniel home">
           <span class="brand-mark">NO</span>
-          <span>Narrative Operating System</span>
+          <span>Charles M. Daniel.</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
           Menu
