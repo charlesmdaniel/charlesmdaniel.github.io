@@ -25,6 +25,14 @@ if (headerMount) {
           </span>
         </a>
         <a class="brand-title" href="index.html">Charles M. Daniel</a>
+        <span class="header-mood" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="7.5" />
+            <circle cx="9.4" cy="10.2" r=".65" fill="currentColor" stroke="none" />
+            <circle cx="14.6" cy="10.2" r=".65" fill="currentColor" stroke="none" />
+            <path d="M9 13.4c.8 1 1.8 1.5 3 1.5s2.2-.5 3-1.5" />
+          </svg>
+        </span>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="7.5" />
