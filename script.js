@@ -26,7 +26,14 @@ if (headerMount) {
           <span>Charles M. Daniel.</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 6c1.5-1.8 3.5-2.7 5.5-2.5-.3 1.9-1.5 3.6-3.5 4.5" />
+            <path d="M12 6C10.5 4.2 8.5 3.3 6.5 3.5c.3 1.9 1.5 3.6 3.5 4.5" />
+            <path d="M7.5 10.5c0-1.4 1.1-2.5 2.5-2.5h4c1.4 0 2.5 1.1 2.5 2.5 0 4.7-2.1 8.5-4.5 8.5s-4.5-3.8-4.5-8.5Z" />
+            <circle cx="10" cy="12" r=".7" fill="currentColor" stroke="none" />
+            <circle cx="14" cy="12" r=".7" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="15" r=".7" fill="currentColor" stroke="none" />
+          </svg>
         </button>
         <nav class="site-nav" aria-label="Primary">
           ${navigation
