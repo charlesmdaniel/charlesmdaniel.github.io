@@ -2,6 +2,7 @@ const navigation = [
   { id: "home", label: "Home", href: "index.html" },
   { id: "system", label: "System", href: "system.html" },
   { id: "work", label: "Work", href: "work.html" },
+  { id: "music", label: "Music", href: "music.html" },
   { id: "writing", label: "Writing", href: "writing.html" },
   { id: "contact", label: "Contact", href: "contact.html" }
 ];
@@ -42,6 +43,7 @@ if (footerMount) {
         <div class="footer-links">
           <a href="system.html">System</a>
           <a href="work.html">Work</a>
+          <a href="music.html">Music</a>
           <a href="writing.html">Writing</a>
           <a href="contact.html">Contact</a>
         </div>
