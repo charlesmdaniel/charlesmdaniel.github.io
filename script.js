@@ -39,7 +39,7 @@ if (footerMount) {
   footerMount.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <p>Minimal interface for narrative architecture and long-horizon systems.</p>
+        <p>Core Value: Utility over Profile.</p>
         <div class="footer-links">
           <a href="system.html">System</a>
           <a href="work.html">Work</a>
