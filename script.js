@@ -15,7 +15,7 @@ if (headerMount) {
   headerMount.innerHTML = `
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="Charles M. Daniel home">
+        <a class="brand-home" href="index.html" aria-label="Charles M. Daniel home">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 10.5 12 3l9 7.5" />
@@ -23,8 +23,8 @@ if (headerMount) {
               <path d="M9.75 21v-6h4.5v6" />
             </svg>
           </span>
-          <span>Charles M. Daniel</span>
         </a>
+        <a class="brand-title" href="index.html">Charles M. Daniel</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 6c1.5-1.8 3.5-2.7 5.5-2.5-.3 1.9-1.5 3.6-3.5 4.5" />
@@ -78,6 +78,11 @@ if (siteHeader) {
 }
 
 if (navToggle && siteHeader) {
+  const closeNavigation = () => {
+    siteHeader.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
   navToggle.addEventListener("click", () => {
     const isOpen = siteHeader.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -85,9 +90,20 @@ if (navToggle && siteHeader) {
 
   document.querySelectorAll(".site-nav a").forEach((link) => {
     link.addEventListener("click", () => {
-      siteHeader.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+      closeNavigation();
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteHeader.contains(event.target)) {
+      closeNavigation();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeNavigation();
+    }
   });
 }
 
