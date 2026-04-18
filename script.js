@@ -58,7 +58,7 @@ if (footerMount) {
   footerMount.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <p>Core Value: Utility over Profile.</p>
+        <p>Utility over Profile.</p>
         <div class="footer-links">
           <a href="system.html">System</a>
           <a href="work.html">Work</a>
