@@ -383,6 +383,7 @@ p {
 .diagram-node,
 .orientation-card,
 .entry-card,
+.artifact-card,
 .instance-card,
 .process-card,
 .method-card,
@@ -404,6 +405,7 @@ p {
 .diagram-node,
 .orientation-card,
 .entry-card,
+.artifact-card,
 .instance-card,
 .process-card,
 .method-card,
@@ -419,6 +421,7 @@ p {
 .hero-panel,
 .page-hero-aside,
 .entry-card,
+.artifact-card,
 .next-step-card,
 .cta-block {
   border-radius: 28px;
@@ -566,7 +569,8 @@ p {
 .entry-result-links,
 .hero-actions,
 .cta-actions,
-.inline-links {
+.inline-links,
+.artifact-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -738,6 +742,10 @@ p {
   grid-template-columns: minmax(0, 1fr) 260px;
 }
 
+.essay-document {
+  display: block;
+}
+
 .essay-side {
   position: sticky;
   top: calc(var(--header-height) + 1.5rem);
@@ -749,6 +757,13 @@ p {
   max-width: var(--reading);
 }
 
+.essay-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
 .essay-intro {
   font-size: 1.15rem;
 }
@@ -758,6 +773,11 @@ p {
   height: 1px;
   margin: 2.5rem 0;
   background: var(--line-strong);
+}
+
+.artifact-print-mark,
+.print-only {
+  display: none;
 }
 
 .essay-section + .essay-section {
@@ -782,6 +802,44 @@ p {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 4vw, 2.5rem);
   line-height: 1.06;
+}
+
+/* The artifact UI stays minimal on screen, then disappears entirely in the printed document. */
+.artifact-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 1.8rem;
+  padding: 1.6rem;
+}
+
+.artifact-copy h2 {
+  max-width: 12ch;
+}
+
+.artifact-actions {
+  align-content: end;
+  justify-content: flex-start;
+}
+
+.pdf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.95rem 1.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.pdf-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .essay-body a,
@@ -838,12 +896,17 @@ p {
   .entry-layout,
   .writing-layout,
   .essay-shell,
+  .artifact-card,
   .feature-project {
     grid-template-columns: 1fr;
   }
 
   .essay-side {
     position: static;
+  }
+
+  .artifact-actions {
+    align-content: start;
   }
 
   .instance-grid,
@@ -933,7 +996,8 @@ p {
   .contact-grid,
   .method-grid,
   .process-grid,
-  .mini-grid {
+  .mini-grid,
+  .artifact-card {
     grid-template-columns: 1fr;
   }
 
@@ -943,9 +1007,196 @@ p {
   }
 
   .cta-block,
+  .artifact-card,
   .feature-project,
   .next-step-card {
     padding: 1.5rem;
+  }
+}
+
+/* Native print is the artifact renderer: strip interface chrome and keep only the essay document. */
+@media print {
+  @page {
+    margin: 0.72in;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #ffffff;
+    --surface: transparent;
+    --surface-strong: transparent;
+    --surface-muted: transparent;
+    --text: #111111;
+    --muted: #555555;
+    --line: rgba(17, 17, 17, 0.16);
+    --line-strong: rgba(17, 17, 17, 0.3);
+    --shadow: none;
+    --container: 100%;
+    --reading: 100%;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  body {
+    min-height: auto;
+    font-size: 12pt;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  body::before,
+  .site-header,
+  .site-footer,
+  .site-nav,
+  .no-print {
+    display: none !important;
+  }
+
+  main,
+  .section,
+  .page-hero {
+    padding: 0 !important;
+    min-height: auto;
+    display: block;
+  }
+
+  .section-border {
+    border-top: 0;
+  }
+
+  .container,
+  .essay-shell,
+  .essay-main,
+  .essay-body,
+  #essay-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .essay-shell {
+    display: block;
+  }
+
+  #essay-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .artifact-print-mark,
+  .print-only {
+    display: block !important;
+  }
+
+  .artifact-print-mark {
+    margin-bottom: 1rem;
+    color: #555555 !important;
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .pathway-progress,
+  .essay-side,
+  .next-step-card,
+  [data-guided-target] {
+    display: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  blockquote,
+  a,
+  span {
+    color: #111111 !important;
+  }
+
+  h1 {
+    max-width: none;
+    margin-bottom: 0.8rem;
+    font-size: 28pt;
+    line-height: 1.06;
+  }
+
+  h2 {
+    max-width: none;
+    margin-top: 2.4rem;
+    margin-bottom: 0.75rem;
+    font-size: 18pt;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  p,
+  .lede,
+  .section-copy,
+  .essay-body p,
+  .essay-intro {
+    font-size: 12pt;
+    line-height: 1.65;
+  }
+
+  .eyebrow,
+  .essay-meta-row span {
+    color: #555555 !important;
+  }
+
+  .essay-meta-row {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+    margin-bottom: 1.75rem;
+  }
+
+  .essay-break {
+    width: 72px;
+    margin: 1.8rem 0;
+    background: rgba(17, 17, 17, 0.22);
+  }
+
+  .essay-section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .essay-section[data-print-break="before"],
+  .essay-section.is-print-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .essay-quote {
+    margin: 1.5rem 0;
+    padding: 0.4rem 0 0.4rem 1rem;
+    border-left: 2px solid #111111;
+    background: transparent;
+    font-size: 16pt;
+    line-height: 1.32;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+
+  .essay-body a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.28);
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

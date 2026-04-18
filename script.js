@@ -419,6 +419,37 @@ function refreshGuidedRoute() {
 renderDiagnostic();
 refreshGuidedRoute();
 
+const originalDocumentTitle = document.title;
+
+// The artifact layer uses native print so the exported PDF always matches the live essay.
+function restoreArtifactTitle() {
+  document.title = originalDocumentTitle;
+  document.body.classList.remove("is-printing");
+}
+
+function triggerArtifactExport(button) {
+  const artifactTitle =
+    button?.dataset.pdfTitle ||
+    document.body.dataset.artifactTitle ||
+    originalDocumentTitle
+      .toLowerCase()
+      .replace(/[^\w]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  document.body.classList.add("is-printing");
+  document.title = artifactTitle;
+  window.print();
+  window.setTimeout(restoreArtifactTitle, 1000);
+}
+
+document.querySelectorAll("[data-pdf-trigger]").forEach((button) => {
+  button.addEventListener("click", () => {
+    triggerArtifactExport(button);
+  });
+});
+
+window.addEventListener("afterprint", restoreArtifactTitle);
+
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
