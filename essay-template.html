@@ -14,9 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260418-4" />
+    <link rel="stylesheet" href="styles.css?v=20260418-5" />
   </head>
-  <body data-page="writing" class="essay-page" data-artifact-title="essay-artifact">
+  <body data-page="writing" class="essay-page">
     <div data-site-header></div>
 
     <main>
@@ -45,10 +45,7 @@
             <aside class="essay-side reveal">
               <div class="rail-block no-print">
                 <p class="eyebrow">Artifact Layer</p>
-                <p>Convert the live essay into a portable document without leaving the system.</p>
-                <button class="pdf-button" type="button" data-pdf-trigger>
-                  Capture Output
-                </button>
+                <p>Each live essay should link its owned PDF artifact from <code>/assets/essays/[essay-slug].pdf</code>.</p>
               </div>
               <div class="rail-block">
                 <p class="eyebrow">Template Notes</p>
@@ -111,14 +108,12 @@
               <p class="eyebrow">Artifact Layer</p>
               <h2>Convert the essay into a portable artifact.</h2>
               <p class="section-copy">
-                Read → Extract → Export → Return. Use the browser-native print layer to capture a clean document that
-                stays synced with the live essay.
+                Read → Understand → Export → Continue. Replace the placeholder with the exact PDF artifact for the live
+                essay.
               </p>
             </div>
             <div class="artifact-actions">
-              <button class="pdf-button" type="button" data-pdf-trigger>
-                Export Essay
-              </button>
+              <a class="ghost-button" href="writing.html">Back to writing</a>
               <a class="ghost-button" href="system.html#definition">Return to the System</a>
               <a class="ghost-button" href="work.html#instantiations">Open an Instantiation</a>
             </div>
@@ -141,6 +136,6 @@
     </main>
 
     <div data-site-footer></div>
-    <script src="script.js?v=20260418-4"></script>
+    <script src="script.js?v=20260418-5"></script>
   </body>
 </html>

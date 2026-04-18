@@ -1,3 +1,9 @@
+const pathPrefix = window.location.pathname.includes("/writing/") ? "../" : "";
+
+function sitePath(path) {
+  return `${pathPrefix}${path}`;
+}
+
 const navigation = [
   { id: "home", label: "Home", href: "index.html" },
   { id: "system", label: "System", href: "system.html" },
@@ -19,28 +25,28 @@ const routeLibrary = {
       title: "Start with the mechanism.",
       body: "Read the definition and the rules that convert contradiction into structure.",
       cta: "Start Here",
-      href: "system.html#definition"
+      href: sitePath("system.html#definition")
     },
     essay: {
       eyebrow: "Step 2 / Essay",
       title: "Read the identity layer.",
       body: "Use the essay to see how repeated change becomes coherence once a system exists underneath it.",
       cta: "Read 39 Rebrands Later...",
-      href: "essay-39-rebrands-later.html#not-vanity"
+      href: sitePath("writing/39-rebrands-later.html#essay-content")
     },
     project: {
       eyebrow: "Step 3 / Instantiation",
       title: "Enter the relational instance.",
       body: "See the same operating logic converting ambiguity into calibrated action.",
       cta: "Open Contact Confidence Simulator",
-      href: "work.html#contact-confidence-simulator"
+      href: sitePath("work.html#contact-confidence-simulator")
     },
     access: {
       eyebrow: "Step 4 / Access",
       title: "Apply the system.",
       body: "Move from interpretation into direct engagement and system use.",
       cta: "Access the System",
-      href: "contact.html#access-channels"
+      href: sitePath("contact.html#access-channels")
     }
   },
   operations: {
@@ -53,28 +59,28 @@ const routeLibrary = {
       title: "Start with the engine.",
       body: "Read how the system captures pressure, imposes rules, and creates usable output.",
       cta: "Start Here",
-      href: "system.html#mechanism"
+      href: sitePath("system.html#mechanism")
     },
     essay: {
       eyebrow: "Step 2 / Essay",
       title: "Use the writing layer to clarify the logic.",
       body: "Read the essay where identity pressure becomes operating logic instead of surface churn.",
       cta: "Read the Essay",
-      href: "essay-39-rebrands-later.html#operating-logic"
+      href: sitePath("writing/39-rebrands-later.html#operating-logic")
     },
     project: {
       eyebrow: "Step 3 / Instantiation",
       title: "Open the strategic instance.",
       body: "See how the same mechanism behaves inside routing, scoring, and decision structure.",
       cta: "Open DealFlow Engine",
-      href: "work.html#dealflow-engine"
+      href: sitePath("work.html#dealflow-engine")
     },
     access: {
       eyebrow: "Step 4 / Access",
       title: "Turn the system toward a live build.",
       body: "Use the access layer when a release, workflow, or body of work needs structure now.",
       cta: "Engage the System",
-      href: "contact.html#access-channels"
+      href: sitePath("contact.html#access-channels")
     }
   },
   mythic: {
@@ -87,28 +93,28 @@ const routeLibrary = {
       title: "Start with the core model.",
       body: "Read the visible engine before moving into world, chapter, or canon design.",
       cta: "Start Here",
-      href: "system.html#model"
+      href: sitePath("system.html#model")
     },
     essay: {
       eyebrow: "Step 2 / Essay",
       title: "Read the doctrine layer first.",
       body: "Use the essay to see how unstable material becomes structured continuity.",
       cta: "Read the Essay",
-      href: "essay-39-rebrands-later.html#what-survives"
+      href: sitePath("writing/39-rebrands-later.html#what-survives")
     },
     project: {
       eyebrow: "Step 3 / Instantiation",
       title: "Open the mythic instance.",
       body: "Move into canon, motif, and world structure through the studio environment.",
       cta: "Open Worldbuilding Studio",
-      href: "work.html#worldbuilding-studio"
+      href: sitePath("work.html#worldbuilding-studio")
     },
     access: {
       eyebrow: "Step 4 / Access",
       title: "Build the world outward.",
       body: "Use the access layer when the system needs to be applied to a release, chapter, or world scale.",
       cta: "Access the System",
-      href: "contact.html#access-channels"
+      href: sitePath("contact.html#access-channels")
     }
   }
 };
@@ -151,7 +157,7 @@ if (headerMount) {
   headerMount.innerHTML = `
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand-home" href="index.html" aria-label="Charles M. Daniel home">
+        <a class="brand-home" href="${sitePath("index.html")}" aria-label="Charles M. Daniel home">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 10.5 12 3l9 7.5" />
@@ -160,7 +166,7 @@ if (headerMount) {
             </svg>
           </span>
         </a>
-        <a class="brand-title" href="index.html">Charles M. Daniel</a>
+        <a class="brand-title" href="${sitePath("index.html")}">Charles M. Daniel</a>
         <button class="header-mood" type="button" aria-expanded="false" aria-label="Toggle navigation" aria-controls="site-nav">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="7.5" />
@@ -173,7 +179,7 @@ if (headerMount) {
           ${navigation
             .map(
               (item) =>
-                `<a href="${item.href}" class="${item.id === currentPage ? "is-active" : ""}">${item.label}</a>`
+                `<a href="${sitePath(item.href)}" class="${item.id === currentPage ? "is-active" : ""}">${item.label}</a>`
             )
             .join("")}
         </nav>
@@ -188,10 +194,10 @@ if (footerMount) {
       <div class="footer-inner">
         <p>Utility over Profile.</p>
         <div class="footer-links">
-          <a href="system.html">System</a>
-          <a href="work.html">Instantiations</a>
-          <a href="writing.html">Writing</a>
-          <a href="contact.html">Access</a>
+          <a href="${sitePath("system.html")}">System</a>
+          <a href="${sitePath("work.html")}">Instantiations</a>
+          <a href="${sitePath("writing.html")}">Writing</a>
+          <a href="${sitePath("contact.html")}">Access</a>
         </div>
       </div>
     </footer>
@@ -418,37 +424,6 @@ function refreshGuidedRoute() {
 
 renderDiagnostic();
 refreshGuidedRoute();
-
-const originalDocumentTitle = document.title;
-
-// The artifact layer uses native print so the exported PDF always matches the live essay.
-function restoreArtifactTitle() {
-  document.title = originalDocumentTitle;
-  document.body.classList.remove("is-printing");
-}
-
-function triggerArtifactExport(button) {
-  const artifactTitle =
-    button?.dataset.pdfTitle ||
-    document.body.dataset.artifactTitle ||
-    originalDocumentTitle
-      .toLowerCase()
-      .replace(/[^\w]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-
-  document.body.classList.add("is-printing");
-  document.title = artifactTitle;
-  window.print();
-  window.setTimeout(restoreArtifactTitle, 1000);
-}
-
-document.querySelectorAll("[data-pdf-trigger]").forEach((button) => {
-  button.addEventListener("click", () => {
-    triggerArtifactExport(button);
-  });
-});
-
-window.addEventListener("afterprint", restoreArtifactTitle);
 
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
