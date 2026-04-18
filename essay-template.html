@@ -6,15 +6,15 @@
     <title>Essay Template | Charles M. Daniel</title>
     <meta
       name="description"
-      content="Reusable native HTML template for essays inside the Narrative Operating System."
+      content="Reusable embedded essay template for the Narrative Operating System."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260418-2" />
+    <link rel="stylesheet" href="styles.css?v=20260418-3" />
   </head>
   <body data-page="writing" class="essay-page">
     <div data-site-header></div>
@@ -23,9 +23,16 @@
       <section class="page-hero section">
         <div class="container essay-shell">
           <article class="essay-main reveal">
-            <p class="eyebrow">Template / Writing Layer</p>
+            <nav class="pathway-progress" aria-label="Guided path">
+              <span class="pathway-chip is-complete">01 Home</span>
+              <span class="pathway-chip is-complete">02 System</span>
+              <span class="pathway-chip is-active">03 Essay</span>
+              <span class="pathway-chip">04 Instantiation</span>
+              <span class="pathway-chip">05 Access</span>
+            </nav>
+            <p class="eyebrow">Template / Embedded Writing</p>
             <h1>[Essay Title]</h1>
-            <p class="lede">[Subtitle that frames the essay as a system argument, field note, or doctrine page.]</p>
+            <p class="lede">[Subtitle that states the pressure, the mechanism, or the doctrine layer.]</p>
             <div class="essay-meta-row">
               <span>[Month Year]</span>
               <span>[Essay type]</span>
@@ -36,7 +43,7 @@
           <aside class="essay-side reveal">
             <div class="rail-block">
               <p class="eyebrow">Template Notes</p>
-              <p>Keep one route back to the system and one route forward to access, subscription, or another essay.</p>
+              <p>Every essay must explain a principle, link to one instantiation, and create a next step.</p>
               <a href="writing.html">Back to writing</a>
             </div>
           </aside>
@@ -48,53 +55,60 @@
           <article class="essay-main reveal">
             <div class="essay-body">
               <p class="essay-intro">
-                [Opening paragraph. State the pressure, question, or contradiction fast. Explain why the essay exists.]
+                [Opening paragraph. State the pressure immediately. Tell the reader why this essay exists inside the system.]
               </p>
 
               <div class="essay-break"></div>
 
               <section class="essay-section">
                 <h2>[Section One]</h2>
-                <p>[Body paragraph. Keep language precise, high-density, and system-aware.]</p>
-                <p>[Second paragraph. Translate insight into structure, not just mood.]</p>
+                <p>[Translate pressure into language without flattening it.]</p>
+                <p>[Make the principle explicit and readable.]</p>
               </section>
 
-              <blockquote class="essay-quote">[Use one strong line that can function as a portable principle.]</blockquote>
+              <blockquote class="essay-quote">
+                [Use a line that can travel as doctrine.]
+              </blockquote>
 
               <section class="essay-section">
                 <h2>[Section Two]</h2>
-                <p>[Develop the mechanism, consequence, or implication.]</p>
+                <p>[Explain the mechanism, rule, or symbolic processing layer.]</p>
               </section>
 
               <section class="essay-section">
                 <h2>[Section Three]</h2>
-                <p>[Route the essay back into the system, an instantiation, or a future output.]</p>
+                <p>[Route the reader back into the system through an instantiation or access layer.]</p>
               </section>
-
-              <article class="bridge-card template-note">
-                <p class="eyebrow">Template Rule</p>
-                <h3>Every essay should explain a principle, connect to an instantiation, and create a next route.</h3>
-                <div class="inline-links">
-                  <a href="system.html#routing">See routing model</a>
-                  <a href="work.html#instantiations">See instantiations</a>
-                </div>
-              </article>
             </div>
           </article>
 
           <aside class="essay-side reveal">
             <div class="rail-block">
-              <p class="eyebrow">Related Routes</p>
-              <a href="system.html#definition">System definition</a>
-              <a href="work.html#instantiations">Instantiations</a>
-              <a href="contact.html">Access</a>
+              <p class="eyebrow">Internal Links</p>
+              <a href="system.html#definition">Definition</a>
+              <a href="system.html#constraints">Constraints</a>
+              <a href="work.html#instantiations">Instances</a>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <!-- Every essay ends with a controlled next step instead of an external exit. -->
+      <section class="section">
+        <div class="container entry-layout">
+          <div class="entry-copy reveal">
+            <p class="eyebrow">Next Step</p>
+            <h2>Route the reader back into the system.</h2>
+            <p class="section-copy">
+              The final block should always move the visitor into a live instance or the access layer.
+            </p>
+          </div>
+          <article class="next-step-card reveal" data-guided-target="project"></article>
         </div>
       </section>
     </main>
 
     <div data-site-footer></div>
-    <script src="script.js?v=20260418-2"></script>
+    <script src="script.js?v=20260418-3"></script>
   </body>
 </html>
