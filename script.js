@@ -1,10 +1,10 @@
 const navigation = [
   { id: "home", label: "Home", href: "index.html" },
   { id: "system", label: "System", href: "system.html" },
-  { id: "work", label: "Work", href: "work.html" },
+  { id: "work", label: "Instantiations", href: "work.html" },
   { id: "music", label: "Music", href: "music.html" },
   { id: "writing", label: "Writing", href: "writing.html" },
-  { id: "contact", label: "Contact", href: "contact.html" }
+  { id: "contact", label: "Access", href: "contact.html" }
 ];
 
 const currentPage = document.body.dataset.page || "home";
@@ -53,10 +53,10 @@ if (footerMount) {
         <p>Utility over Profile.</p>
         <div class="footer-links">
           <a href="system.html">System</a>
-          <a href="work.html">Work</a>
+          <a href="work.html">Instantiations</a>
           <a href="music.html">Music</a>
           <a href="writing.html">Writing</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html">Access</a>
         </div>
       </div>
     </footer>
