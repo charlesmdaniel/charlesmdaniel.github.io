@@ -379,7 +379,7 @@ function renderGuidedTarget(element, step) {
 
   const resolvedStep =
     currentPage === "system" && element.dataset.guidedTarget === "essay"
-      ? { ...step, href: sitePath("writing.html") }
+      ? { ...step, href: sitePath("writing/39-rebrands-later.html") }
       : step;
 
   element.innerHTML = `
