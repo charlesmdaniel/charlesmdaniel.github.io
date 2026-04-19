@@ -377,12 +377,17 @@ function renderGuidedTarget(element, step) {
     return;
   }
 
+  const resolvedStep =
+    currentPage === "system" && element.dataset.guidedTarget === "essay"
+      ? { ...step, href: sitePath("writing.html") }
+      : step;
+
   element.innerHTML = `
-    <p class="eyebrow">${step.eyebrow}</p>
-    <h3>${step.title}</h3>
-    <p>${step.body}</p>
+    <p class="eyebrow">${resolvedStep.eyebrow}</p>
+    <h3>${resolvedStep.title}</h3>
+    <p>${resolvedStep.body}</p>
     <div class="cta-actions">
-      <a class="button button-primary" href="${step.href}">${step.cta}</a>
+      <a class="button button-primary" href="${resolvedStep.href}">${resolvedStep.cta}</a>
     </div>
   `;
 }
