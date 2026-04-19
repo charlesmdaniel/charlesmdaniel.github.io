@@ -762,6 +762,12 @@ p {
   box-shadow: 0 24px 88px rgba(255, 255, 255, 0.05), var(--shadow);
 }
 
+.feature-body {
+  display: grid;
+  align-content: start;
+  gap: 1.5rem;
+}
+
 .mini-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -780,6 +786,12 @@ p {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.inline-links {
+  margin-top: 0.35rem;
+  column-gap: 1.25rem;
+  row-gap: 0.7rem;
 }
 
 .writing-layout {
