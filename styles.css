@@ -520,6 +520,54 @@ p {
   max-width: 12ch;
 }
 
+#entry-protocol .entry-layout {
+  position: relative;
+}
+
+#entry-protocol .entry-copy {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+#entry-protocol .entry-card {
+  position: relative;
+  z-index: 2;
+}
+
+.entry-arrow {
+  width: clamp(360px, 48vw, 620px);
+  height: clamp(116px, 15vw, 184px);
+  margin-top: 0.85rem;
+  margin-left: 0.35rem;
+  pointer-events: none;
+}
+
+.entry-arrow svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.entry-arrow-glow,
+.entry-arrow-line,
+.entry-arrow-head {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.entry-arrow-glow {
+  stroke: rgba(244, 244, 239, 0.08);
+  stroke-width: 18;
+}
+
+.entry-arrow-line,
+.entry-arrow-head {
+  stroke: rgba(244, 244, 239, 0.62);
+  stroke-width: 4.5;
+}
+
 .entry-card {
   display: grid;
   gap: 1.2rem;
@@ -1101,6 +1149,10 @@ p {
 
   .essay-source-body p {
     max-width: none;
+  }
+
+  .entry-arrow {
+    display: none;
   }
 
   .instance-grid,
