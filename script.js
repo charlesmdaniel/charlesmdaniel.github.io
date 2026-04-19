@@ -15,7 +15,7 @@ const navigation = [
 // The route map keeps every page pointing to the next clear step.
 const routeLibrary = {
   clarity: {
-    summary: "Start with the system, read the essay, see one project, then choose your next step.",
+    summary: "Start with the system. Read the essay. Open one project. Then choose your next step.",
     projectId: "contact-confidence-simulator",
     system: {
       eyebrow: "Step 1",
@@ -47,7 +47,7 @@ const routeLibrary = {
     }
   },
   systems: {
-    summary: "Start with the system, read the operating logic inside the essay, see the project, then choose your next step.",
+    summary: "Start with the system. Read the operating logic. Open one project. Then choose your next step.",
     projectId: "dealflow-engine",
     system: {
       eyebrow: "Step 1",
@@ -79,7 +79,7 @@ const routeLibrary = {
     }
   },
   music: {
-    summary: "Start with the system, read the essay, see the chapter project, then choose your next step.",
+    summary: "Start with the system. Read the essay. Open the chapter project. Then choose your next step.",
     projectId: "chapter-one-awakening",
     system: {
       eyebrow: "Step 1",
@@ -115,7 +115,7 @@ const routeLibrary = {
 const diagnosticQuestions = [
   {
     id: "need",
-    prompt: "What do you need most right now?",
+    prompt: "What needs help first?",
     options: [
       { value: "clarity", label: "Clarity", note: "You need the idea to make sense fast." },
       { value: "structure", label: "Structure", note: "You need a system you can actually use." },
@@ -124,11 +124,11 @@ const diagnosticQuestions = [
   },
   {
     id: "surface",
-    prompt: "Where should we show it first?",
+    prompt: "Which example should the system show after the essay?",
     options: [
-      { value: "writing", label: "Writing", note: "Start with language and explanation." },
-      { value: "projects", label: "Projects", note: "Start with a working system." },
-      { value: "music", label: "Music", note: "Start with chapter logic and release design." }
+      { value: "writing", label: "Writing", note: "Show the clearest project example first." },
+      { value: "projects", label: "Projects", note: "Show the most structural project first." },
+      { value: "music", label: "Music", note: "Show the chapter-based release path first." }
     ]
   }
 ];
@@ -313,8 +313,8 @@ function renderDiagnostic() {
     const question = diagnosticQuestions[currentStep];
     const helpText =
       currentStep === 0
-        ? "Answer two short questions for a recommended path, or start with the main route now."
-        : "One more answer and the system will point you to the best next step.";
+        ? "The first step stays fixed: start with the system page. These answers choose which example appears later in the path."
+        : "One more answer and the system will choose the project example that fits best.";
 
     mount.innerHTML = `
       <div class="entry-progress" aria-hidden="true">
@@ -392,6 +392,69 @@ function renderGuidedTarget(element, step) {
   `;
 }
 
+function setProjectCardState(card, open) {
+  const button = card?.querySelector("[data-project-action]");
+  const response = card?.querySelector("[data-project-response]");
+
+  if (!button || !response) {
+    return;
+  }
+
+  card.classList.toggle("is-expanded", open);
+  button.setAttribute("aria-expanded", String(open));
+  button.textContent = open ? button.dataset.openLabel || button.textContent : button.dataset.closedLabel || button.textContent;
+  response.hidden = !open;
+}
+
+function initProjectInteractions() {
+  const projectCards = document.querySelectorAll(".feature-project");
+
+  if (!projectCards.length) {
+    return;
+  }
+
+  projectCards.forEach((card) => {
+    const button = card.querySelector("[data-project-action]");
+
+    if (!button) {
+      return;
+    }
+
+    setProjectCardState(card, false);
+
+    button.addEventListener("click", () => {
+      const shouldOpen = button.getAttribute("aria-expanded") !== "true";
+
+      projectCards.forEach((otherCard) => {
+        setProjectCardState(otherCard, shouldOpen && otherCard === card);
+      });
+    });
+  });
+}
+
+// On the project page, the system opens one recommended interaction so the user is guided instead of browsing blindly.
+function resolveActiveProjectId(route) {
+  const hashId = window.location.hash.replace("#", "");
+
+  if (hashId && document.getElementById(hashId)?.classList.contains("feature-project")) {
+    return hashId;
+  }
+
+  return route.projectId;
+}
+
+function openRecommendedProject(projectId) {
+  const projectCards = document.querySelectorAll(".feature-project");
+
+  if (!projectCards.length) {
+    return;
+  }
+
+  projectCards.forEach((card) => {
+    setProjectCardState(card, card.id === projectId);
+  });
+}
+
 function refreshGuidedRoute() {
   const { route, routeKey } = getActiveRoute();
 
@@ -408,11 +471,14 @@ function refreshGuidedRoute() {
     element.classList.remove("is-recommended");
   });
 
-  const recommendedProject = document.getElementById(route.projectId);
+  const recommendedProjectId = resolveActiveProjectId(route);
+  const recommendedProject = document.getElementById(recommendedProjectId);
 
   if (recommendedProject) {
     recommendedProject.classList.add("is-recommended");
   }
+
+  openRecommendedProject(recommendedProjectId);
 
   document.body.dataset.activeRoute = routeKey;
 }
@@ -444,9 +510,14 @@ function initReturnForms() {
   });
 }
 
+initProjectInteractions();
 renderDiagnostic();
 refreshGuidedRoute();
 initReturnForms();
+
+if (currentPage === "work") {
+  window.addEventListener("hashchange", refreshGuidedRoute);
+}
 
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

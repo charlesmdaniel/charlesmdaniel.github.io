@@ -426,6 +426,10 @@ p {
   color: var(--muted);
 }
 
+.guided-note {
+  margin-top: 0.95rem;
+}
+
 .hero-panel-grid,
 .method-grid,
 .process-grid,
@@ -762,6 +766,10 @@ p {
   box-shadow: 0 24px 88px rgba(255, 255, 255, 0.05), var(--shadow);
 }
 
+.feature-project.is-expanded {
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
 .feature-body {
   display: grid;
   align-content: start;
@@ -786,6 +794,40 @@ p {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.project-proof {
+  margin: 0;
+  padding-top: 0.15rem;
+  font-size: 0.96rem;
+}
+
+.project-proof strong {
+  color: var(--text);
+}
+
+.project-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.project-response {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-response[hidden] {
+  display: none;
+}
+
+.project-response h3,
+.project-response p {
+  margin-bottom: 0;
 }
 
 .inline-links {
