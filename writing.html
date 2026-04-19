@@ -6,15 +6,15 @@
     <title>Writing | Charles M. Daniel</title>
     <meta
       name="description"
-      content="Embedded essays and doctrine pages inside the Narrative Operating System."
+      content="Read essays on-site, export them as artifacts, and move into the next step of the system."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260418-5" />
+    <link rel="stylesheet" href="styles.css?v=20260419-1" />
   </head>
   <body data-page="writing">
     <div data-site-header></div>
@@ -26,23 +26,22 @@
             <nav class="pathway-progress" aria-label="Guided path">
               <span class="pathway-chip is-complete">01 Home</span>
               <span class="pathway-chip is-complete">02 System</span>
-              <span class="pathway-chip is-active">03 Essay</span>
-              <span class="pathway-chip">04 Instantiation</span>
-              <span class="pathway-chip">05 Access</span>
+              <span class="pathway-chip is-active">03 Writing</span>
+              <span class="pathway-chip">04 Projects</span>
+              <span class="pathway-chip">05 Get Started</span>
             </nav>
-            <p class="eyebrow">Embedded Writing System</p>
-            <h1>Writing is where the system becomes legible.</h1>
+            <p class="eyebrow">Writing</p>
+            <h1>This is where the system explains itself.</h1>
             <p class="lede">
-              Essays do not sit outside the interface. They clarify the mechanism, interpret the pressure, and push the
-              visitor into the next controlled step.
+              The essays turn the model into plain language. Read on-site, export a PDF if you want it, then keep moving.
             </p>
           </div>
           <div class="page-hero-aside reveal" id="featured-essay">
-            <p class="eyebrow">Featured Essay</p>
+            <p class="eyebrow">Start With This</p>
             <h3>39 Rebrands Later...</h3>
-            <p>The architecture of identity: repeated change turned into structured clarity.</p>
+            <p>A short essay about naming the pattern before the work can hold together.</p>
             <div class="cta-actions">
-              <a class="button button-primary" href="writing/39-rebrands-later.html">Read Essay</a>
+              <a class="button button-primary" href="writing/39-rebrands-later.html">Read the essay</a>
             </div>
           </div>
         </div>
@@ -52,45 +51,55 @@
         <div class="container writing-layout">
           <div class="writing-feed">
             <article class="essay-card reveal">
-              <p class="essay-meta">Native essay · Identity architecture</p>
+              <p class="essay-meta">Essay · Identity</p>
               <h2>39 Rebrands Later...</h2>
-              <p>
-                A system-level essay on containers, repeated change, and why coherence requires operating logic.
-              </p>
-              <a href="writing/39-rebrands-later.html">Open essay</a>
+              <p>Repeated change makes more sense once the real structure underneath it gets a name.</p>
+              <a href="writing/39-rebrands-later.html">Open the essay</a>
             </article>
 
             <article class="essay-card reveal">
-              <p class="essay-meta">System principle · Constraint layer</p>
-              <h2>Narrative Systems Outlast Motivation</h2>
-              <p>
-                Use the system page as doctrine: constraints, sequence, and why structure survives the loss of mood.
-              </p>
-              <a href="system.html#constraints">Read the constraint set</a>
+              <p class="essay-meta">System Page</p>
+              <h2>Read the model first.</h2>
+              <p>If you want the shortest explanation of the whole site, start with input, structure, and output.</p>
+              <a href="system.html#overview">Open the system page</a>
             </article>
 
             <article class="essay-card reveal">
-              <p class="essay-meta">Instantiation route · Application layer</p>
-              <h2>One Mechanism, Several Outputs</h2>
-              <p>
-                Move from essay to instantiation and watch the same structure behave across multiple pressure surfaces.
-              </p>
-              <a href="work.html#instantiations">View system instances</a>
+              <p class="essay-meta">Projects</p>
+              <h2>See the same idea in action.</h2>
+              <p>Move from explanation into a real project and watch the same logic become a working system.</p>
+              <a href="work.html#instantiations">Open the projects page</a>
             </article>
           </div>
 
           <aside class="writing-rail reveal">
-            <div class="rail-block" id="subscribe">
+            <div class="rail-block" id="return-loop">
               <p class="eyebrow">Return Loop</p>
-              <h3>Receive serialized drops from inside the system.</h3>
-              <p>Essays, chapter releases, and system notes arrive as sequence, not as a generic newsletter.</p>
-              <a class="button button-primary" href="https://cmdaniel24.substack.com/subscribe">Join the list</a>
+              <h3>Get new outputs.</h3>
+              <p>Use one email field to keep up with essays, releases, and system notes.</p>
+              <form
+                class="return-form"
+                data-return-form
+                action="https://cmdaniel24.substack.com/subscribe"
+                method="get"
+              >
+                <label class="sr-only" for="writing-return-email">Email address</label>
+                <input
+                  class="return-input"
+                  id="writing-return-email"
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                />
+                <button class="button button-primary" type="submit">Stay in the System</button>
+              </form>
+              <p class="return-state" data-return-state>New outputs should be easy to follow and easy to return to.</p>
             </div>
             <div class="rail-block rail-list">
-              <p class="eyebrow">Internal Links</p>
-              <a href="system.html#definition">System definition</a>
-              <a href="system.html#mechanism">Mechanism</a>
-              <a href="work.html#instantiations">Instances</a>
+              <p class="eyebrow">Next Links</p>
+              <a href="system.html#how-it-works">How the system works</a>
+              <a href="work.html#contact-confidence-simulator">See a project</a>
               <a href="essay-template.html">Essay template</a>
             </div>
           </aside>
@@ -101,9 +110,9 @@
         <div class="container entry-layout">
           <div class="entry-copy reveal">
             <p class="eyebrow">Next Step</p>
-            <h2>Do not stop at interpretation.</h2>
+            <h2>After the essay, move into a project.</h2>
             <p class="section-copy" data-route-summary>
-              The essay layer prepares the visitor to see the same logic operating inside a live instance.
+              The writing layer explains the idea so the project layer feels concrete instead of abstract.
             </p>
           </div>
           <article class="next-step-card reveal" data-guided-target="project"></article>
@@ -112,6 +121,6 @@
     </main>
 
     <div data-site-footer></div>
-    <script src="script.js?v=20260418-5"></script>
+    <script src="script.js?v=20260419-1"></script>
   </body>
 </html>

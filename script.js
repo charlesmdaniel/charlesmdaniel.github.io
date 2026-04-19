@@ -7,144 +7,128 @@ function sitePath(path) {
 const navigation = [
   { id: "home", label: "Home", href: "index.html" },
   { id: "system", label: "System", href: "system.html" },
-  { id: "work", label: "Instantiations", href: "work.html" },
-  { id: "music", label: "Music", href: "music.html" },
   { id: "writing", label: "Writing", href: "writing.html" },
-  { id: "contact", label: "Access", href: "contact.html" }
+  { id: "work", label: "Projects", href: "work.html" },
+  { id: "contact", label: "Get Started", href: "contact.html" }
 ];
 
-// The route map keeps the interface moving forward through one controlled path.
+// The route map keeps every page pointing to the next clear step.
 const routeLibrary = {
-  identity: {
-    name: "Identity Route",
-    summary:
-      "You are dealing with identity pressure. Start with the mechanism, then the identity essay, then the relational instance, then access.",
+  clarity: {
+    summary: "Start with the system, read the essay, see one project, then choose your next step.",
     projectId: "contact-confidence-simulator",
     system: {
-      eyebrow: "Step 1 / System",
-      title: "Start with the mechanism.",
-      body: "Read the definition and the rules that convert contradiction into structure.",
+      eyebrow: "Step 1",
+      title: "Read how the system works.",
+      body: "Start with the simple model: input becomes structure, then output.",
       cta: "Start Here",
-      href: sitePath("system.html#definition")
+      href: sitePath("system.html#overview")
     },
     essay: {
-      eyebrow: "Step 2 / Essay",
-      title: "Read the identity layer.",
-      body: "Use the essay to see how repeated change becomes coherence once a system exists underneath it.",
-      cta: "Read 39 Rebrands Later...",
+      eyebrow: "Step 2",
+      title: "Read one essay.",
+      body: "See what happens when repeated change is named, organized, and made useful.",
+      cta: "Read the essay",
       href: sitePath("writing/39-rebrands-later.html#essay-content")
     },
     project: {
-      eyebrow: "Step 3 / Instantiation",
-      title: "Enter the relational instance.",
-      body: "See the same operating logic converting ambiguity into calibrated action.",
-      cta: "Open Contact Confidence Simulator",
+      eyebrow: "Step 3",
+      title: "See one project.",
+      body: "Watch the same logic turn uncertainty into a clearer next move.",
+      cta: "See the project",
       href: sitePath("work.html#contact-confidence-simulator")
     },
     access: {
-      eyebrow: "Step 4 / Access",
-      title: "Apply the system.",
-      body: "Move from interpretation into direct engagement and system use.",
-      cta: "Access the System",
-      href: sitePath("contact.html#access-channels")
+      eyebrow: "Step 4",
+      title: "Choose your next step.",
+      body: "Use the final page to start a conversation or stay in the system for future outputs.",
+      cta: "Get Started",
+      href: sitePath("contact.html#get-started")
     }
   },
-  operations: {
-    name: "Operations Route",
-    summary:
-      "You are dealing with strategic drag. Start with the engine, then the essay, then the dealflow system, then access.",
+  systems: {
+    summary: "Start with the system, read the operating logic inside the essay, see the project, then choose your next step.",
     projectId: "dealflow-engine",
     system: {
-      eyebrow: "Step 1 / System",
-      title: "Start with the engine.",
-      body: "Read how the system captures pressure, imposes rules, and creates usable output.",
+      eyebrow: "Step 1",
+      title: "Read the core system.",
+      body: "See how ideas become structure and then become usable output.",
       cta: "Start Here",
-      href: sitePath("system.html#mechanism")
+      href: sitePath("system.html#how-it-works")
     },
     essay: {
-      eyebrow: "Step 2 / Essay",
-      title: "Use the writing layer to clarify the logic.",
-      body: "Read the essay where identity pressure becomes operating logic instead of surface churn.",
-      cta: "Read the Essay",
+      eyebrow: "Step 2",
+      title: "Read the operating logic.",
+      body: "Use the essay to see how a scattered identity becomes one clear system.",
+      cta: "Read the essay",
       href: sitePath("writing/39-rebrands-later.html#operating-logic")
     },
     project: {
-      eyebrow: "Step 3 / Instantiation",
-      title: "Open the strategic instance.",
-      body: "See how the same mechanism behaves inside routing, scoring, and decision structure.",
-      cta: "Open DealFlow Engine",
+      eyebrow: "Step 3",
+      title: "Open the project layer.",
+      body: "See the same logic used for routing, scoring, and clear decision-making.",
+      cta: "See the project",
       href: sitePath("work.html#dealflow-engine")
     },
     access: {
-      eyebrow: "Step 4 / Access",
-      title: "Turn the system toward a live build.",
-      body: "Use the access layer when a release, workflow, or body of work needs structure now.",
-      cta: "Engage the System",
-      href: sitePath("contact.html#access-channels")
+      eyebrow: "Step 4",
+      title: "Put the system to work.",
+      body: "Move from reading to a live use case when the work needs structure now.",
+      cta: "Get Started",
+      href: sitePath("contact.html#get-started")
     }
   },
-  mythic: {
-    name: "Mythic Route",
-    summary:
-      "You are dealing with atmosphere, world, or chapter pressure. Start with the core model, then the essay, then the mythic instance, then access.",
-    projectId: "worldbuilding-studio",
+  music: {
+    summary: "Start with the system, read the essay, see the chapter project, then choose your next step.",
+    projectId: "chapter-one-awakening",
     system: {
-      eyebrow: "Step 1 / System",
-      title: "Start with the core model.",
-      body: "Read the visible engine before moving into world, chapter, or canon design.",
+      eyebrow: "Step 1",
+      title: "Read the model first.",
+      body: "Start with input, structure, and output before moving into music and release logic.",
       cta: "Start Here",
       href: sitePath("system.html#model")
     },
     essay: {
-      eyebrow: "Step 2 / Essay",
-      title: "Read the doctrine layer first.",
-      body: "Use the essay to see how unstable material becomes structured continuity.",
-      cta: "Read the Essay",
+      eyebrow: "Step 2",
+      title: "Read the essay.",
+      body: "See how unstable material becomes something you can name, keep, and build on.",
+      cta: "Read the essay",
       href: sitePath("writing/39-rebrands-later.html#what-survives")
     },
     project: {
-      eyebrow: "Step 3 / Instantiation",
-      title: "Open the mythic instance.",
-      body: "Move into canon, motif, and world structure through the studio environment.",
-      cta: "Open Worldbuilding Studio",
-      href: sitePath("work.html#worldbuilding-studio")
+      eyebrow: "Step 3",
+      title: "See the chapter project.",
+      body: "Move from language into release structure, chapter sequencing, and return loops.",
+      cta: "See the project",
+      href: sitePath("work.html#chapter-one-awakening")
     },
     access: {
-      eyebrow: "Step 4 / Access",
-      title: "Build the world outward.",
-      body: "Use the access layer when the system needs to be applied to a release, chapter, or world scale.",
-      cta: "Access the System",
-      href: sitePath("contact.html#access-channels")
+      eyebrow: "Step 4",
+      title: "Take the next step.",
+      body: "Use the final page when a release, world, or body of work needs a clear structure.",
+      cta: "Get Started",
+      href: sitePath("contact.html#get-started")
     }
   }
 };
 
 const diagnosticQuestions = [
   {
-    id: "pressure",
-    prompt: "Where is the pressure right now?",
+    id: "need",
+    prompt: "What do you need most right now?",
     options: [
-      { value: "identity", label: "Identity", note: "coherence, contradiction, reinvention" },
-      { value: "systems", label: "Operations", note: "routing, decision drag, throughput" },
-      { value: "world", label: "World", note: "canon, atmosphere, release logic" }
+      { value: "clarity", label: "Clarity", note: "You need the idea to make sense fast." },
+      { value: "structure", label: "Structure", note: "You need a system you can actually use." },
+      { value: "momentum", label: "Momentum", note: "You need the work to move again." }
     ]
   },
   {
-    id: "task",
-    prompt: "What has to happen next?",
+    id: "surface",
+    prompt: "Where should we show it first?",
     options: [
-      { value: "clarify", label: "Clarify", note: "name the signal and its structure" },
-      { value: "build", label: "Build", note: "turn the signal into an engine" },
-      { value: "release", label: "Release", note: "move it into public form" }
-    ]
-  },
-  {
-    id: "output",
-    prompt: "What form should it take first?",
-    options: [
-      { value: "essay", label: "Essay", note: "language first" },
-      { value: "tool", label: "Tool", note: "system first" },
-      { value: "chapter", label: "Chapter", note: "atmosphere first" }
+      { value: "writing", label: "Writing", note: "Start with language and explanation." },
+      { value: "projects", label: "Projects", note: "Start with a working system." },
+      { value: "music", label: "Music", note: "Start with chapter logic and release design." }
     ]
   }
 ];
@@ -195,9 +179,9 @@ if (footerMount) {
         <p>Utility over Profile.</p>
         <div class="footer-links">
           <a href="${sitePath("system.html")}">System</a>
-          <a href="${sitePath("work.html")}">Instantiations</a>
           <a href="${sitePath("writing.html")}">Writing</a>
-          <a href="${sitePath("contact.html")}">Access</a>
+          <a href="${sitePath("work.html")}">Projects</a>
+          <a href="${sitePath("contact.html")}">Get Started</a>
         </div>
       </div>
     </footer>
@@ -264,21 +248,21 @@ function saveRoute(routeKey, answers) {
   );
 }
 
-function resolveRouteKey(answers) {
-  if (answers.output === "chapter" || answers.pressure === "world") {
-    return "mythic";
+function resolveRouteKey(answers = {}) {
+  if (answers.surface === "music") {
+    return "music";
   }
 
-  if (answers.pressure === "systems" || answers.task === "build" || answers.output === "tool") {
-    return "operations";
+  if (answers.need === "structure" || answers.surface === "projects") {
+    return "systems";
   }
 
-  return "identity";
+  return "clarity";
 }
 
 function getActiveRoute() {
   const stored = readStoredRoute();
-  const routeKey = stored?.routeKey && routeLibrary[stored.routeKey] ? stored.routeKey : "identity";
+  const routeKey = stored?.routeKey && routeLibrary[stored.routeKey] ? stored.routeKey : "clarity";
   return {
     routeKey,
     route: routeLibrary[routeKey],
@@ -303,6 +287,8 @@ function renderDiagnostic() {
   }
 
   const render = () => {
+    const previewRoute = routeLibrary[resolveRouteKey(answers)];
+
     if (currentStep >= diagnosticQuestions.length) {
       const routeKey = resolveRouteKey(answers);
       const route = routeLibrary[routeKey];
@@ -312,12 +298,12 @@ function renderDiagnostic() {
           ${diagnosticQuestions.map(() => '<span class="is-active"></span>').join("")}
         </div>
         <div class="entry-result">
-          <p class="eyebrow">Route Selected</p>
-          <h3>${route.name}</h3>
+          <p class="eyebrow">Recommended Path</p>
+          <h3>${route.system.title}</h3>
           <p>${route.summary}</p>
           <div class="entry-result-links">
             <a class="button button-primary" href="${route.system.href}">${route.system.cta}</a>
-            <button class="ghost-button" type="button" data-entry-reset>Reset route</button>
+            <button class="ghost-button" type="button" data-entry-reset>Reset</button>
           </div>
         </div>
       `;
@@ -325,6 +311,11 @@ function renderDiagnostic() {
     }
 
     const question = diagnosticQuestions[currentStep];
+    const helpText =
+      currentStep === 0
+        ? "Answer two short questions for a recommended path, or start with the main route now."
+        : "One more answer and the system will point you to the best next step.";
+
     mount.innerHTML = `
       <div class="entry-progress" aria-hidden="true">
         ${diagnosticQuestions
@@ -332,7 +323,7 @@ function renderDiagnostic() {
           .join("")}
       </div>
       <div class="diagnostic-question">
-        <p class="eyebrow">Prompt ${currentStep + 1}</p>
+        <p class="eyebrow">Question ${currentStep + 1}</p>
         <h3>${question.prompt}</h3>
       </div>
       <div class="diagnostic-options">
@@ -348,11 +339,11 @@ function renderDiagnostic() {
           .join("")}
       </div>
       <div class="entry-result entry-result-pending">
-        <p>Complete the prompts to unlock the guided route and the Start Here handoff.</p>
-        <button class="button button-primary" type="button" disabled>Start Here</button>
+        <p>${helpText}</p>
+        <a class="button button-primary" href="${previewRoute.system.href}">Start Here</a>
       </div>
     `;
-    };
+  };
 
   mount.addEventListener("click", (event) => {
     const resetButton = event.target.closest("[data-entry-reset]");
@@ -381,7 +372,7 @@ function renderDiagnostic() {
   render();
 }
 
-function renderGuidedTarget(element, step, routeName) {
+function renderGuidedTarget(element, step) {
   if (!step) {
     return;
   }
@@ -390,7 +381,6 @@ function renderGuidedTarget(element, step, routeName) {
     <p class="eyebrow">${step.eyebrow}</p>
     <h3>${step.title}</h3>
     <p>${step.body}</p>
-    <p class="guided-note">${routeName}</p>
     <div class="cta-actions">
       <a class="button button-primary" href="${step.href}">${step.cta}</a>
     </div>
@@ -402,7 +392,7 @@ function refreshGuidedRoute() {
 
   document.querySelectorAll("[data-guided-target]").forEach((element) => {
     const target = element.dataset.guidedTarget;
-    renderGuidedTarget(element, route[target], route.name);
+    renderGuidedTarget(element, route[target]);
   });
 
   document.querySelectorAll("[data-route-summary]").forEach((element) => {
@@ -422,8 +412,36 @@ function refreshGuidedRoute() {
   document.body.dataset.activeRoute = routeKey;
 }
 
+function initReturnForms() {
+  const savedEmail = localStorage.getItem("nos-email") || "";
+
+  document.querySelectorAll("[data-return-form]").forEach((form) => {
+    const input = form.querySelector('input[type="email"]');
+    const state = form.parentElement.querySelector("[data-return-state]");
+
+    if (input && savedEmail) {
+      input.value = savedEmail;
+    }
+
+    if (state && savedEmail) {
+      state.textContent = "Email saved on this device for next time.";
+    }
+
+    form.addEventListener("submit", () => {
+      if (input && input.value.trim()) {
+        localStorage.setItem("nos-email", input.value.trim());
+
+        if (state) {
+          state.textContent = "Email saved on this device for next time.";
+        }
+      }
+    });
+  });
+}
+
 renderDiagnostic();
 refreshGuidedRoute();
+initReturnForms();
 
 const revealItems = document.querySelectorAll(".reveal");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
