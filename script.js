@@ -313,7 +313,7 @@ function renderDiagnostic() {
     const question = diagnosticQuestions[currentStep];
     const helpText =
       currentStep === 0
-        ? "The first step stays fixed: start with the system page. These answers choose which example appears later in the path."
+        ? ""
         : "One more answer and the system will choose the project example that fits best.";
 
     mount.innerHTML = `
@@ -339,7 +339,7 @@ function renderDiagnostic() {
           .join("")}
       </div>
       <div class="entry-result entry-result-pending">
-        <p>${helpText}</p>
+        ${helpText ? `<p>${helpText}</p>` : ""}
         <a class="button button-primary" href="${previewRoute.system.href}">Start Here</a>
       </div>
     `;
