@@ -20,7 +20,7 @@ const routeLibrary = {
     system: {
       eyebrow: "Step 1",
       title: "Read how the system works.",
-      body: "Start with the simple model: input becomes structure, then output.",
+      body: "",
       cta: "Start Here",
       href: sitePath("system.html#overview")
     },
@@ -385,7 +385,7 @@ function renderGuidedTarget(element, step) {
   element.innerHTML = `
     <p class="eyebrow">${resolvedStep.eyebrow}</p>
     <h3>${resolvedStep.title}</h3>
-    <p>${resolvedStep.body}</p>
+    ${resolvedStep.body ? `<p>${resolvedStep.body}</p>` : ""}
     <div class="cta-actions">
       <a class="button button-primary" href="${resolvedStep.href}">${resolvedStep.cta}</a>
     </div>
