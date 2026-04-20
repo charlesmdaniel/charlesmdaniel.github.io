@@ -190,6 +190,11 @@ if (footerMount) {
 
 const siteHeader = document.querySelector(".site-header");
 const navToggle = document.querySelector(".header-mood");
+const initialHashPresent = Boolean(window.location.hash);
+
+if (initialHashPresent && "scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
 
 if (siteHeader) {
   const syncHeaderState = () => {
@@ -242,8 +247,17 @@ function getAnchorScrollOffset() {
   return headerHeight + 12;
 }
 
+function getHashTargetId() {
+  return decodeURIComponent(window.location.hash.replace(/^#/, ""));
+}
+
+function revealHashContext(target) {
+  target.classList.add("is-visible");
+  target.closest(".reveal")?.classList.add("is-visible");
+}
+
 function scrollToHashTarget(behavior = "auto") {
-  const hash = window.location.hash.replace(/^#/, "");
+  const hash = getHashTargetId();
 
   if (!hash) {
     return;
@@ -254,6 +268,8 @@ function scrollToHashTarget(behavior = "auto") {
   if (!target) {
     return;
   }
+
+  revealHashContext(target);
 
   const targetTop = Math.max(target.getBoundingClientRect().top + window.scrollY - getAnchorScrollOffset(), 0);
 
@@ -268,14 +284,20 @@ function scrollToHashTarget(behavior = "auto") {
 }
 
 function settleHashTarget(behavior = "auto") {
-  if (!window.location.hash) {
+  if (!getHashTargetId()) {
     return;
   }
 
+  const run = () => {
+    scrollToHashTarget(behavior);
+  };
+
   requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      scrollToHashTarget(behavior);
-    });
+    requestAnimationFrame(run);
+  });
+
+  [140, 420, 960].forEach((delay) => {
+    window.setTimeout(run, delay);
   });
 }
 
@@ -570,6 +592,10 @@ window.addEventListener("load", () => {
   settleHashTarget("auto");
 });
 
+window.addEventListener("pageshow", () => {
+  settleHashTarget("auto");
+});
+
 if (window.location.hash) {
   settleHashTarget("auto");
 }
@@ -578,6 +604,12 @@ if (document.fonts?.ready) {
   document.fonts.ready.then(() => {
     settleHashTarget("auto");
   });
+}
+
+if (initialHashPresent && "scrollRestoration" in history) {
+  window.setTimeout(() => {
+    history.scrollRestoration = "auto";
+  }, 1400);
 }
 
 const revealItems = document.querySelectorAll(".reveal");
