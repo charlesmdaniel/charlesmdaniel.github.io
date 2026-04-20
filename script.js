@@ -33,7 +33,7 @@ const routeLibrary = {
     },
     project: {
       eyebrow: "Step 3",
-      title: "See one project.",
+      title: "See the project.",
       body: "Watch the same logic turn uncertainty into a clearer next move.",
       cta: "See the project",
       href: sitePath("work.html#contact-confidence-simulator")
