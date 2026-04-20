@@ -41,7 +41,7 @@ const routeLibrary = {
     access: {
       eyebrow: "Step 4",
       title: "Choose your next step.",
-      body: "Use the final page to start a conversation or stay in the system for future outputs.",
+      body: "",
       cta: "Get Started",
       href: sitePath("contact.html#get-started")
     }
