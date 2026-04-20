@@ -35,7 +35,7 @@ const routeLibrary = {
       eyebrow: "Step 3",
       title: "See the project.",
       body: "Watch the same logic turn uncertainty into a clearer next move.",
-      cta: "See the project",
+      cta: "Project",
       href: sitePath("work.html#contact-confidence-simulator")
     },
     access: {
@@ -67,7 +67,7 @@ const routeLibrary = {
       eyebrow: "Step 3",
       title: "Open the project layer.",
       body: "See the same logic used for routing, scoring, and clear decision-making.",
-      cta: "See the project",
+      cta: "Project",
       href: sitePath("work.html#dealflow-engine")
     },
     access: {
@@ -99,7 +99,7 @@ const routeLibrary = {
       eyebrow: "Step 3",
       title: "See the chapter project.",
       body: "Move from language into release structure, chapter sequencing, and return loops.",
-      cta: "See the project",
+      cta: "Project",
       href: sitePath("work.html#chapter-one-awakening")
     },
     access: {
