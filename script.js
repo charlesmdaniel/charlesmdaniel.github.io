@@ -28,7 +28,7 @@ const routeLibrary = {
       eyebrow: "Step 2",
       title: "Read the essay.",
       body: "",
-      cta: "Read the essay",
+      cta: "Essay",
       href: sitePath("writing/39-rebrands-later.html#essay-content")
     },
     project: {
@@ -60,7 +60,7 @@ const routeLibrary = {
       eyebrow: "Step 2",
       title: "Read the operating logic.",
       body: "Use the essay to see how a scattered identity becomes one clear system.",
-      cta: "Read the essay",
+      cta: "Essay",
       href: sitePath("writing/39-rebrands-later.html#operating-logic")
     },
     project: {
@@ -92,7 +92,7 @@ const routeLibrary = {
       eyebrow: "Step 2",
       title: "Read the essay.",
       body: "See how unstable material becomes something you can name, keep, and build on.",
-      cta: "Read the essay",
+      cta: "Essay",
       href: sitePath("writing/39-rebrands-later.html#what-survives")
     },
     project: {
