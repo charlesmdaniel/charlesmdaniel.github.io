@@ -495,17 +495,9 @@ function initReturnForms() {
       input.value = savedEmail;
     }
 
-    if (state && savedEmail) {
-      state.textContent = "Email saved on this device for next time.";
-    }
-
     form.addEventListener("submit", () => {
       if (input && input.value.trim()) {
         localStorage.setItem("nos-email", input.value.trim());
-
-        if (state) {
-          state.textContent = "Email saved on this device for next time.";
-        }
       }
     });
   });
