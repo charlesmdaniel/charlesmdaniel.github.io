@@ -986,8 +986,21 @@ p {
 }
 
 .artifact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
   align-content: end;
   justify-content: flex-start;
+}
+
+.artifact-actions a,
+.essay-side .rail-block a,
+.pdf-button,
+.ghost-button {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .pdf-button {
@@ -1152,7 +1165,25 @@ p {
   }
 
   .artifact-actions {
+    display: grid;
+    gap: 0.85rem;
     align-content: start;
+  }
+
+  .artifact-card,
+  .essay-side,
+  .artifact-actions,
+  .essay-side .rail-block {
+    position: relative;
+    z-index: 1;
+  }
+
+  .artifact-actions a,
+  .essay-side .rail-block a,
+  .pdf-button,
+  .ghost-button {
+    width: 100%;
+    justify-content: center;
   }
 
   .essay-source-body p {
