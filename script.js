@@ -451,7 +451,8 @@ function openRecommendedProject(projectId) {
   }
 
   projectCards.forEach((card) => {
-    setProjectCardState(card, card.id === projectId);
+    const shouldOpen = card.id === projectId && card.dataset.autoOpen !== "false";
+    setProjectCardState(card, shouldOpen);
   });
 }
 
