@@ -1100,6 +1100,10 @@ p {
   align-content: start;
 }
 
+.next-step-card .cta-actions {
+  margin-top: 0.6rem;
+}
+
 .cta-section {
   padding-bottom: 7rem;
 }
