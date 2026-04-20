@@ -15,7 +15,7 @@ const navigation = [
 // The route map keeps every page pointing to the next clear step.
 const routeLibrary = {
   clarity: {
-    summary: "Start with the system. Read the essay. Open one project. Then choose your next step.",
+    summary: "",
     projectId: "contact-confidence-simulator",
     system: {
       eyebrow: "Step 1",
@@ -300,7 +300,7 @@ function renderDiagnostic() {
         <div class="entry-result">
           <p class="eyebrow">Recommended Path</p>
           <h3>${route.system.title}</h3>
-          <p>${route.summary}</p>
+          ${route.summary ? `<p>${route.summary}</p>` : ""}
           <div class="entry-result-links">
             <a class="button button-primary" href="${route.system.href}">${route.system.cta}</a>
             <button class="ghost-button" type="button" data-entry-reset>Reset</button>
@@ -465,6 +465,7 @@ function refreshGuidedRoute() {
 
   document.querySelectorAll("[data-route-summary]").forEach((element) => {
     element.textContent = route.summary;
+    element.hidden = !route.summary;
   });
 
   document.querySelectorAll(".feature-project.is-recommended").forEach((element) => {
