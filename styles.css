@@ -24,11 +24,10 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 2rem);
 }
 
 :where(section, article, div, p)[id] {
-  scroll-margin-top: calc(var(--header-height) + 2rem);
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 body {
