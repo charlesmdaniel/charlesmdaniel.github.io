@@ -27,7 +27,7 @@ const routeLibrary = {
     essay: {
       eyebrow: "Step 2",
       title: "Read the essay.",
-      body: "See what happens when repeated change is named, organized, and made useful.",
+      body: "",
       cta: "Read the essay",
       href: sitePath("writing/39-rebrands-later.html#essay-content")
     },
