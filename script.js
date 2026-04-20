@@ -230,6 +230,55 @@ if (navToggle && siteHeader) {
   });
 }
 
+function getAnchorScrollOffset() {
+  if (siteHeader) {
+    return siteHeader.offsetHeight + 12;
+  }
+
+  const headerHeight = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--header-height") || "84"
+  );
+
+  return headerHeight + 12;
+}
+
+function scrollToHashTarget(behavior = "auto") {
+  const hash = window.location.hash.replace(/^#/, "");
+
+  if (!hash) {
+    return;
+  }
+
+  const target = document.getElementById(hash);
+
+  if (!target) {
+    return;
+  }
+
+  const targetTop = Math.max(target.getBoundingClientRect().top + window.scrollY - getAnchorScrollOffset(), 0);
+
+  if (Math.abs(window.scrollY - targetTop) < 4) {
+    return;
+  }
+
+  window.scrollTo({
+    top: targetTop,
+    behavior
+  });
+}
+
+function settleHashTarget(behavior = "auto") {
+  if (!window.location.hash) {
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      scrollToHashTarget(behavior);
+    });
+  });
+}
+
 function readStoredRoute() {
   try {
     return JSON.parse(localStorage.getItem("nos-route") || "null");
@@ -511,6 +560,24 @@ initReturnForms();
 
 if (currentPage === "work") {
   window.addEventListener("hashchange", refreshGuidedRoute);
+}
+
+window.addEventListener("hashchange", () => {
+  settleHashTarget("smooth");
+});
+
+window.addEventListener("load", () => {
+  settleHashTarget("auto");
+});
+
+if (window.location.hash) {
+  settleHashTarget("auto");
+}
+
+if (document.fonts?.ready) {
+  document.fonts.ready.then(() => {
+    settleHashTarget("auto");
+  });
 }
 
 const revealItems = document.querySelectorAll(".reveal");
