@@ -3,81 +3,269 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charles M. Daniel</title>
+    <title>Charles M. Daniel | Business Science Portfolio</title>
     <meta
       name="description"
-      content="Charles M. Daniel: writings, music, projects, and social links."
+      content="Charles M. Daniel studies business as a system through finance, accounting, operations, systems analysis, and workflow optimization."
     />
-    <link rel="stylesheet" href="styles.css?v=20260530d" />
-    <link rel="icon" type="image/png" sizes="48x48" href="data:image/png;base64,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" />
+    <link rel="stylesheet" href="styles.css?v=20260531-business-system" />
   </head>
   <body>
-    <main class="site-wrapper" aria-label="Charles M. Daniel links">
-      <section class="site-main">
-        <div class="inner">
-          <figure class="portrait-frame">
-            <img src="assets/images/charles-daniel-outdoor.svg?v=20260530d" alt="Charles M. Daniel smiling outdoors" />
-          </figure>
+    <header class="portfolio-header">
+      <a class="wordmark" href="#top" aria-label="Charles M. Daniel home">CMD</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#thesis">Thesis</a>
+        <a href="#framework">Framework</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-          <p class="bio">Putting the parts together.</p>
+    <main id="top">
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Career Operating System</p>
+            <h1>Charles M. Daniel</h1>
+            <p class="hero-tagline">Business Science | Finance | Accounting | Operations | Systems Analysis</p>
+            <p class="hero-position">
+              Business is a system. Accounting records the signals. Finance interprets value. Operations improve execution.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#resume">View Resume</a>
+              <a class="button" href="#writing">View Writings</a>
+              <a class="button" href="#projects">View Projects</a>
+              <a class="button" href="#contact">Contact</a>
+            </div>
+          </div>
 
-          <nav class="social-icons" aria-label="Social links">
-            <a href="https://www.youtube.com/@charlesmdaniel" aria-label="YouTube" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8Z" />
-                <path d="m10 15.3 5.2-3.3L10 8.7v6.6Z" />
-              </svg>
-            </a>
-            <a href="https://instagram.com/charlesmdaniel" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="4" y="4" width="16" height="16" rx="4.2" />
-                <circle cx="12" cy="12" r="3.7" />
-                <circle cx="17" cy="7" r="1" />
-              </svg>
-            </a>
-            <a href="https://x.com/charlesmdaniel" aria-label="X" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 4h4.2l10 16H15L5 4Z" />
-                <path d="m5 20 6.9-7.5" />
-                <path d="M12.7 11.6 19.5 4" />
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/charlesmdaniel/" aria-label="LinkedIn" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6.8 10v9.2" />
-                <path d="M6.8 6.6v.1" />
-                <path d="M11 19.2V10" />
-                <path d="M11 14.2c0-2.7 1.6-4.4 4-4.4 2.2 0 3.5 1.5 3.5 4.2v5.2" />
-              </svg>
-            </a>
-            <a href="mailto:charlesmdaniel9@gmail.com" aria-label="Email">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3.5" y="5.5" width="17" height="13" rx="1.5" />
-                <path d="m4.5 7 7.5 6 7.5-6" />
-              </svg>
-            </a>
-          </nav>
+          <aside class="hero-panel" aria-label="Portfolio system summary">
+            <img
+              class="profile-image"
+              src="assets/images/charles-daniel-studio.jpeg"
+              alt="Charles M. Daniel"
+            />
+            <div class="system-strip" aria-label="Signal to execution framework">
+              <span>Signal</span>
+              <span>Meaning</span>
+              <span>Value</span>
+              <span>Execution</span>
+            </div>
+            <dl class="metrics-list">
+              <div>
+                <dt>Focus</dt>
+                <dd>Finance, accounting, operations</dd>
+              </div>
+              <div>
+                <dt>Method</dt>
+                <dd>Observation, testing, systems improvement</dd>
+              </div>
+              <div>
+                <dt>Output</dt>
+                <dd>Useful tools, workflows, and analysis</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
 
-          <nav class="link-buttons" aria-label="Primary links">
-            <a href="https://substack.com/@charlesmdaniel" target="_blank" rel="noreferrer">
-              <span>Writings</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m9 5 7 7-7 7" />
-              </svg>
+      <section class="section" id="thesis">
+        <div class="container split-section">
+          <div>
+            <p class="eyebrow">Operating Thesis</p>
+            <h2>Business activity becomes useful when the system is visible.</h2>
+          </div>
+          <p class="thesis-line">
+            I study the true activity of making money through observation, testing, and systems improvement.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="framework">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">System Framework</p>
+            <h2>Signal → Meaning → Value → Execution</h2>
+          </div>
+          <div class="framework-grid">
+            <article class="framework-card">
+              <span>01</span>
+              <h3>Signal</h3>
+              <p>Raw business data, transactions, behavior, and performance inputs.</p>
+            </article>
+            <article class="framework-card">
+              <span>02</span>
+              <h3>Meaning</h3>
+              <p>Interpretation through accounting, finance, and analysis.</p>
+            </article>
+            <article class="framework-card">
+              <span>03</span>
+              <h3>Value</h3>
+              <p>The economic insight, decision, or opportunity created.</p>
+            </article>
+            <article class="framework-card">
+              <span>04</span>
+              <h3>Execution</h3>
+              <p>The process, workflow, or action that improves the system.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Capabilities</p>
+            <h2>Skills organized by business function.</h2>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-column">
+              <h3>Accounting</h3>
+              <ul>
+                <li>Bookkeeping</li>
+                <li>Reconciliations</li>
+                <li>Financial statements</li>
+                <li>Tax basics</li>
+              </ul>
+            </article>
+            <article class="skill-column">
+              <h3>Finance</h3>
+              <ul>
+                <li>Budgeting</li>
+                <li>Forecasting</li>
+                <li>Modeling</li>
+                <li>Valuation</li>
+                <li>Cash flow</li>
+              </ul>
+            </article>
+            <article class="skill-column">
+              <h3>Systems</h3>
+              <ul>
+                <li>Process mapping</li>
+                <li>Bottleneck analysis</li>
+                <li>Workflow design</li>
+                <li>Operations improvement</li>
+              </ul>
+            </article>
+            <article class="skill-column">
+              <h3>Tools</h3>
+              <ul>
+                <li>Excel</li>
+                <li>QuickBooks</li>
+                <li>Python basics</li>
+                <li>Codex</li>
+                <li>AI-assisted research</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Projects</p>
+            <h2>Current systems and working artifacts.</h2>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="card-meta">Website System</div>
+              <h3>Personal Portfolio Website</h3>
+              <p>
+                A simple, utility-based website built to organize my career signal, business thesis, resume, and projects.
+              </p>
+              <a class="text-link" href="#top">Review the system</a>
+            </article>
+            <article class="project-card">
+              <div class="card-meta">Study System</div>
+              <h3>Business Science Study System</h3>
+              <p>
+                A learning system for mastering the science of business through accounting, finance, and operations with
+                AI-assisted research.
+              </p>
+              <div class="document-preview">
+                <span>PDF</span>
+                <strong>LESSON PLANS BIZ SCI</strong>
+                <small>Business science learning framework</small>
+              </div>
+              <a class="button button-small" href="assets/docs/lesson-plans-biz-sci.pdf" target="_blank" rel="noreferrer">
+                Open Study System
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="writing">
+        <div class="container callout-row">
+          <div>
+            <p class="eyebrow">Writing</p>
+            <h2>Notes on business, systems, and practical improvement.</h2>
+            <p>
+              Writing is the meaning layer: observations become language, language becomes models, and models become
+              decisions.
+            </p>
+          </div>
+          <a class="button button-primary" href="https://substack.com/@charlesmdaniel" target="_blank" rel="noreferrer">
+            Read on Substack
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="resume">
+        <div class="container resume-grid">
+          <div>
+            <p class="eyebrow">Resume</p>
+            <h2>Career signal in one document.</h2>
+            <p>
+              The resume functions as a structured record of education, work, tools, and practical business capability.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="assets/docs/website-resume-2026.pdf" target="_blank" rel="noreferrer">
+                Open Resume
+              </a>
+              <a class="button" href="assets/docs/website-resume-2026.pdf" download>Download PDF</a>
+            </div>
+          </div>
+          <a
+            class="resume-preview"
+            href="assets/docs/website-resume-2026.pdf"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Website Resume 2026 PDF"
+          >
+            <span>PDF</span>
+            <strong>Website Resume 2026</strong>
+            <small>Open the full resume</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Minimal routes for useful signal.</h2>
+          </div>
+          <div class="contact-grid">
+            <a href="mailto:charlesmdaniel9@gmail.com">
+              <span>Email</span>
+              charlesmdaniel9@gmail.com
             </a>
-            <a href="projects.html">
-              <span>Projects</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m9 5 7 7-7 7" />
-              </svg>
+            <a href="https://www.linkedin.com/in/charlesmdaniel/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              linkedin.com/in/charlesmdaniel
             </a>
-            <a href="https://untitled.stream/invite/bOFIfdFhvgzCO7KZqPBMA" target="_blank" rel="noreferrer">
-              <span>Music</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m9 5 7 7-7 7" />
-              </svg>
+            <a href="https://instagram.com/charlesmdaniel" target="_blank" rel="noreferrer">
+              <span>Instagram</span>
+              @charlesmdaniel
             </a>
-          </nav>
+            <a href="https://x.com/charlesmdaniel" target="_blank" rel="noreferrer">
+              <span>X</span>
+              @charlesmdaniel
+            </a>
+          </div>
         </div>
       </section>
     </main>
