@@ -537,16 +537,17 @@ h3 {
 .release-card-featured {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(19rem, 0.75fr);
   min-height: 35rem;
   padding: 0;
 }
 
 .release-visual {
   position: relative;
+  order: 2;
   min-height: 35rem;
   overflow: hidden;
-  border-right: 1px solid var(--line);
+  border-left: 1px solid var(--line);
   background: #0d0d0b;
 }
 
@@ -564,14 +565,14 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 88% 72%;
+  object-position: 92% 50%;
   filter: saturate(0.76) contrast(1.04) brightness(0.82);
 }
 
 .release-number {
   position: absolute;
-  right: 1.5rem;
   bottom: 1.25rem;
+  left: 1.5rem;
   z-index: 2;
   color: var(--ash-dark);
   font-family: var(--serif);
@@ -581,9 +582,18 @@ h3 {
 
 .release-copy {
   display: flex;
+  order: 1;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   padding: clamp(2rem, 4vw, 4rem);
+}
+
+.release-copy .release-meta {
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.release-copy h3 {
+  margin-top: 0;
 }
 
 .release-meta {
@@ -1126,13 +1136,19 @@ h3 {
   }
 
   .release-visual {
+    order: 1;
     min-height: 22rem;
-    border-right: 0;
+    border-left: 0;
     border-bottom: 1px solid var(--line);
   }
 
   .release-copy {
-    min-height: 26rem;
+    order: 2;
+    min-height: 24rem;
+  }
+
+  .release-copy .release-meta {
+    margin-bottom: 2.5rem;
   }
 
   .release-card {
@@ -1141,6 +1157,10 @@ h3 {
 
   .release-card h3 {
     margin-top: 5rem;
+  }
+
+  .release-card-featured .release-copy h3 {
+    margin-top: 0;
   }
 
   .theme-list li {
