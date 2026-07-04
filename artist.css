@@ -547,59 +547,32 @@ h3 {
   min-height: 35rem;
   overflow: hidden;
   border-right: 1px solid var(--line);
+  background: #0d0d0b;
+}
+
+.release-visual::after {
+  position: absolute;
+  inset: 0;
   background:
-    repeating-radial-gradient(circle at 52% 48%, transparent 0 3.5rem, rgba(161, 129, 87, 0.12) 3.56rem 3.62rem),
-    #0d0d0b;
-}
-
-.release-visual::before,
-.release-visual::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 1px;
-  background: var(--line);
+    linear-gradient(90deg, rgba(10, 10, 9, 0.22), transparent 55%),
+    linear-gradient(0deg, rgba(10, 10, 9, 0.58), transparent 48%);
   content: "";
+  pointer-events: none;
 }
 
-.release-visual::before {
-  transform: translate(-50%, -50%) rotate(31deg);
-}
-
-.release-visual::after {
-  transform: translate(-50%, -50%) rotate(-31deg);
-}
-
-.release-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(56%, 20rem);
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border: 1px solid var(--gold-dark);
-  border-radius: 50%;
-  box-shadow: 0 0 5rem rgba(161, 129, 87, 0.08);
-}
-
-.release-orbit::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.45rem;
-  height: 0.45rem;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 2rem var(--gold);
-  content: "";
+.release-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 88% 72%;
+  filter: saturate(0.76) contrast(1.04) brightness(0.82);
 }
 
 .release-number {
   position: absolute;
   right: 1.5rem;
   bottom: 1.25rem;
+  z-index: 2;
   color: var(--ash-dark);
   font-family: var(--serif);
   font-size: 0.8rem;
