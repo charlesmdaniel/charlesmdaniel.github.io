@@ -5,109 +5,110 @@ function sitePath(path) {
 }
 
 const navigation = [
-  { id: "home", label: "Home", href: "index.html" },
-  { id: "system", label: "System", href: "system.html" },
-  { id: "writing", label: "Writing", href: "writing.html" },
+  { id: "home", label: "Home", href: "index.html#top" },
+  { id: "focus", label: "Focus", href: "index.html#professional-direction" },
+  { id: "system", label: "Framework", href: "system.html" },
   { id: "work", label: "Projects", href: "work.html" },
-  { id: "contact", label: "Get Started", href: "contact.html" }
+  { id: "resume", label: "Resume", href: "index.html#resume" },
+  { id: "contact", label: "Contact", href: "contact.html" }
 ];
 
 // The route map keeps every page pointing to the next clear step.
 const routeLibrary = {
   clarity: {
-    summary: "",
-    projectId: "contact-confidence-simulator",
+    summary: "Start with the advisory framework, review the project system, then use the resume to verify the evidence.",
+    projectId: "wealth-management-client-analysis-system",
     system: {
       eyebrow: "Step 1",
-      title: "Read how the system works.",
-      body: "",
-      cta: "Start Here",
+      title: "Read the advisory framework.",
+      body: "See how financial information moves from signal to meaning, value, and execution.",
+      cta: "Open Framework",
       href: sitePath("system.html#overview")
     },
     essay: {
       eyebrow: "Step 2",
-      title: "Read the essay.",
-      body: "",
-      cta: "Essay",
-      href: sitePath("writing/39-rebrands-later.html#essay-content")
+      title: "Review the professional direction.",
+      body: "Start with the finance and wealth-management preparation layer.",
+      cta: "Professional Direction",
+      href: sitePath("index.html#professional-direction")
     },
     project: {
       eyebrow: "Step 3",
-      title: "See the project.",
-      body: "",
-      cta: "Project",
-      href: sitePath("work.html#contact-confidence-simulator")
+      title: "Open the client-analysis system.",
+      body: "Review the in-development system for organizing financial information and planning insights.",
+      cta: "Project Details",
+      href: sitePath("work.html#wealth-management-client-analysis-system")
     },
     access: {
       eyebrow: "Step 4",
-      title: "Choose your next step.",
-      body: "",
-      cta: "Get Started",
-      href: sitePath("contact.html#get-started")
+      title: "Verify the resume evidence.",
+      body: "Review education, technical tools, and prior experience that support the direction.",
+      cta: "View Resume",
+      href: sitePath("index.html#resume")
     }
   },
   systems: {
-    summary: "Start with the system. Read the operating logic. Open one project. Then choose your next step.",
-    projectId: "dealflow-engine",
+    summary: "Start with operations, review dashboard logic, then connect the workflow back to service execution.",
+    projectId: "investment-advisory-operations-dashboard",
     system: {
       eyebrow: "Step 1",
-      title: "Read the core system.",
-      body: "See how ideas become structure and then become usable output.",
-      cta: "Start Here",
+      title: "Study the operating framework.",
+      body: "See how information quality drives execution quality.",
+      cta: "Open Framework",
       href: sitePath("system.html#how-it-works")
     },
     essay: {
       eyebrow: "Step 2",
-      title: "Read the operating logic.",
-      body: "Use the essay to see how a scattered identity becomes one clear system.",
-      cta: "Essay",
-      href: sitePath("writing/39-rebrands-later.html#operating-logic")
+      title: "Review advisory readiness.",
+      body: "Connect knowledge, ethics, service preparation, and investment operations.",
+      cta: "Readiness",
+      href: sitePath("index.html#advisory-readiness")
     },
     project: {
       eyebrow: "Step 3",
-      title: "Open the project layer.",
-      body: "See the same logic used for routing, scoring, and clear decision-making.",
-      cta: "Project",
-      href: sitePath("work.html#dealflow-engine")
+      title: "Open the operations dashboard.",
+      body: "See how documentation, meetings, tasks, and follow-up can be tracked as one workflow.",
+      cta: "Project Details",
+      href: sitePath("work.html#investment-advisory-operations-dashboard")
     },
     access: {
       eyebrow: "Step 4",
-      title: "Put the system to work.",
-      body: "Move from reading to a live use case when the work needs structure now.",
-      cta: "Get Started",
+      title: "Move to professional contact.",
+      body: "Use the contact page for networking or portfolio review.",
+      cta: "Contact",
       href: sitePath("contact.html#get-started")
     }
   },
   music: {
-    summary: "Start with the system. Read the essay. Open the chapter project. Then choose your next step.",
-    projectId: "chapter-one-awakening",
+    summary: "Start with financial information, move into analysis, and end with clearer execution.",
+    projectId: "business-science-study-system",
     system: {
       eyebrow: "Step 1",
       title: "Read the model first.",
-      body: "Start with input, structure, and output before moving into music and release logic.",
-      cta: "Start Here",
+      body: "Start with signal, meaning, value, and execution before reviewing projects.",
+      cta: "Open Framework",
       href: sitePath("system.html#model")
     },
     essay: {
       eyebrow: "Step 2",
-      title: "Read the essay.",
-      body: "See how unstable material becomes something you can name, keep, and build on.",
-      cta: "Essay",
-      href: sitePath("writing/39-rebrands-later.html#what-survives")
+      title: "Review capabilities.",
+      body: "See the finance, accounting, service, operations, and technology map.",
+      cta: "Capabilities",
+      href: sitePath("index.html#capabilities")
     },
     project: {
       eyebrow: "Step 3",
-      title: "See the chapter project.",
-      body: "Move from language into release structure, chapter sequencing, and return loops.",
-      cta: "Project",
-      href: sitePath("work.html#chapter-one-awakening")
+      title: "See the study system.",
+      body: "Review the learning framework that connects finance, accounting, analytics, and operations.",
+      cta: "Project Details",
+      href: sitePath("work.html#business-science-study-system")
     },
     access: {
       eyebrow: "Step 4",
-      title: "Take the next step.",
-      body: "Use the final page when a release, world, or body of work needs a clear structure.",
-      cta: "Get Started",
-      href: sitePath("contact.html#get-started")
+      title: "Review the resume.",
+      body: "Confirm the education, tools, and experience behind the positioning.",
+      cta: "Resume",
+      href: sitePath("index.html#resume")
     }
   }
 };
@@ -115,20 +116,20 @@ const routeLibrary = {
 const diagnosticQuestions = [
   {
     id: "need",
-    prompt: "What needs help first?",
+    prompt: "Which professional signal should come first?",
     options: [
-      { value: "clarity", label: "Clarity", note: "You need the idea to make sense fast." },
-      { value: "structure", label: "Structure", note: "You need a system you can actually use." },
-      { value: "momentum", label: "Momentum", note: "You need the work to move again." }
+      { value: "clarity", label: "Analysis", note: "Start with financial information and interpretation." },
+      { value: "structure", label: "Operations", note: "Start with workflow, documentation, and execution." },
+      { value: "momentum", label: "Capability", note: "Start with education, tools, and readiness." }
     ]
   },
   {
     id: "surface",
-    prompt: "Which example should the system show after the essay?",
+    prompt: "Which project layer should follow?",
     options: [
-      { value: "writing", label: "Writing", note: "Show the clearest project example first." },
-      { value: "projects", label: "Projects", note: "Show the most structural project first." },
-      { value: "music", label: "Music", note: "Show the chapter-based release path first." }
+      { value: "writing", label: "Client Analysis", note: "Show the planning-support project first." },
+      { value: "projects", label: "Operations", note: "Show the workflow dashboard first." },
+      { value: "music", label: "Study System", note: "Show the broader business-science foundation." }
     ]
   }
 ];
@@ -142,13 +143,7 @@ if (headerMount) {
     <header class="site-header">
       <div class="header-inner">
         <a class="brand-home" href="${sitePath("index.html")}" aria-label="Charles M. Daniel home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 10.5 12 3l9 7.5" />
-              <path d="M5.25 9.5V21h13.5V9.5" />
-              <path d="M9.75 21v-6h4.5v6" />
-            </svg>
-          </span>
+          <span class="brand-mark" aria-hidden="true">CMD</span>
         </a>
         <a class="brand-title" href="${sitePath("index.html")}">Charles M. Daniel</a>
         <button class="header-mood" type="button" aria-expanded="false" aria-label="Toggle navigation" aria-controls="site-nav">
@@ -176,12 +171,13 @@ if (footerMount) {
   footerMount.innerHTML = `
     <footer class="site-footer">
       <div class="footer-inner">
-        <p>Utility over Profile.</p>
+        <p>Charles M. Daniel © 2026</p>
+        <p class="footer-disclaimer">This website is a professional portfolio and educational resource. It does not provide investment, legal, accounting, or tax advice.</p>
         <div class="footer-links">
-          <a href="${sitePath("system.html")}">System</a>
-          <a href="${sitePath("writing.html")}">Writing</a>
+          <a href="${sitePath("system.html")}">Framework</a>
           <a href="${sitePath("work.html")}">Projects</a>
-          <a href="${sitePath("contact.html")}">Get Started</a>
+          <a href="${sitePath("index.html#resume")}">Resume</a>
+          <a href="${sitePath("contact.html")}">Contact</a>
         </div>
       </div>
     </footer>
