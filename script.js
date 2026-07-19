@@ -8,7 +8,6 @@ const navigation = [
   { id: "home", label: "Home", href: "index.html#top" },
   { id: "focus", label: "Focus", href: "index.html#professional-direction" },
   { id: "system", label: "Framework", href: "system.html" },
-  { id: "work", label: "Projects", href: "work.html" },
   { id: "resume", label: "Resume", href: "index.html#resume" },
   { id: "contact", label: "Contact", href: "contact.html" }
 ];
@@ -16,7 +15,7 @@ const navigation = [
 // The route map keeps every page pointing to the next clear step.
 const routeLibrary = {
   clarity: {
-    summary: "Start with the advisory framework, review the project system, then use the resume to verify the evidence.",
+    summary: "Start with the advisory framework, review capabilities, then use the resume to verify the evidence.",
     projectId: "wealth-management-client-analysis-system",
     system: {
       eyebrow: "Step 1",
@@ -34,10 +33,10 @@ const routeLibrary = {
     },
     project: {
       eyebrow: "Step 3",
-      title: "Open the client-analysis system.",
-      body: "Review the in-development system for organizing financial information and planning insights.",
-      cta: "Project Details",
-      href: sitePath("work.html#wealth-management-client-analysis-system")
+      title: "Review the capability map.",
+      body: "Connect finance, accounting, client service, operations, and advisory-industry preparation.",
+      cta: "Capabilities",
+      href: sitePath("index.html#capabilities")
     },
     access: {
       eyebrow: "Step 4",
@@ -48,7 +47,7 @@ const routeLibrary = {
     }
   },
   systems: {
-    summary: "Start with operations, review dashboard logic, then connect the workflow back to service execution.",
+    summary: "Start with operations, review readiness, then connect the workflow back to service execution.",
     projectId: "investment-advisory-operations-dashboard",
     system: {
       eyebrow: "Step 1",
@@ -66,10 +65,10 @@ const routeLibrary = {
     },
     project: {
       eyebrow: "Step 3",
-      title: "Open the operations dashboard.",
-      body: "See how documentation, meetings, tasks, and follow-up can be tracked as one workflow.",
-      cta: "Project Details",
-      href: sitePath("work.html#investment-advisory-operations-dashboard")
+      title: "Review investment operations readiness.",
+      body: "See how documentation, reporting, data verification, and workflow management fit the preparation path.",
+      cta: "Readiness",
+      href: sitePath("index.html#advisory-readiness")
     },
     access: {
       eyebrow: "Step 4",
@@ -80,12 +79,12 @@ const routeLibrary = {
     }
   },
   music: {
-    summary: "Start with financial information, move into analysis, and end with clearer execution.",
+    summary: "Start with financial information, move into analysis, and end with resume evidence.",
     projectId: "business-science-study-system",
     system: {
       eyebrow: "Step 1",
       title: "Read the model first.",
-      body: "Start with signal, meaning, value, and execution before reviewing projects.",
+      body: "Start with signal, meaning, value, and execution before reviewing capabilities.",
       cta: "Open Framework",
       href: sitePath("system.html#model")
     },
@@ -98,10 +97,10 @@ const routeLibrary = {
     },
     project: {
       eyebrow: "Step 3",
-      title: "See the study system.",
-      body: "Review the learning framework that connects finance, accounting, analytics, and operations.",
-      cta: "Project Details",
-      href: sitePath("work.html#business-science-study-system")
+      title: "Review the resume evidence.",
+      body: "Confirm the education, tools, and experience behind the professional direction.",
+      cta: "Resume",
+      href: sitePath("index.html#resume")
     },
     access: {
       eyebrow: "Step 4",
@@ -125,10 +124,10 @@ const diagnosticQuestions = [
   },
   {
     id: "surface",
-    prompt: "Which project layer should follow?",
+    prompt: "Which evidence layer should follow?",
     options: [
-      { value: "writing", label: "Client Analysis", note: "Show the planning-support project first." },
-      { value: "projects", label: "Operations", note: "Show the workflow dashboard first." },
+      { value: "writing", label: "Capabilities", note: "Show the skill map first." },
+      { value: "projects", label: "Operations", note: "Show the readiness layer first." },
       { value: "music", label: "Study System", note: "Show the broader business-science foundation." }
     ]
   }
@@ -175,7 +174,6 @@ if (footerMount) {
         <p class="footer-disclaimer">This website is a professional portfolio and educational resource. It does not provide investment, legal, accounting, or tax advice.</p>
         <div class="footer-links">
           <a href="${sitePath("system.html")}">Framework</a>
-          <a href="${sitePath("work.html")}">Projects</a>
           <a href="${sitePath("index.html#resume")}">Resume</a>
           <a href="${sitePath("contact.html")}">Contact</a>
         </div>
@@ -381,7 +379,7 @@ function renderDiagnostic() {
     const helpText =
       currentStep === 0
         ? ""
-        : "One more answer and the system will choose the project example that fits best.";
+        : "One more answer and the system will choose the evidence layer that fits best.";
 
     mount.innerHTML = `
       <div class="entry-progress" aria-hidden="true">
