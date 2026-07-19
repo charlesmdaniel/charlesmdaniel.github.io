@@ -16,7 +16,6 @@ const navigation = [
 const routeLibrary = {
   clarity: {
     summary: "Start with the advisory framework, review capabilities, then use the resume to verify the evidence.",
-    projectId: "wealth-management-client-analysis-system",
     system: {
       eyebrow: "Step 1",
       title: "Read the advisory framework.",
@@ -31,7 +30,7 @@ const routeLibrary = {
       cta: "Professional Direction",
       href: sitePath("index.html#professional-direction")
     },
-    project: {
+    capability: {
       eyebrow: "Step 3",
       title: "Review the capability map.",
       body: "Connect finance, accounting, client service, operations, and advisory-industry preparation.",
@@ -48,7 +47,6 @@ const routeLibrary = {
   },
   systems: {
     summary: "Start with operations, review readiness, then connect the workflow back to service execution.",
-    projectId: "investment-advisory-operations-dashboard",
     system: {
       eyebrow: "Step 1",
       title: "Study the operating framework.",
@@ -63,7 +61,7 @@ const routeLibrary = {
       cta: "Readiness",
       href: sitePath("index.html#advisory-readiness")
     },
-    project: {
+    capability: {
       eyebrow: "Step 3",
       title: "Review investment operations readiness.",
       body: "See how documentation, reporting, data verification, and workflow management fit the preparation path.",
@@ -80,7 +78,6 @@ const routeLibrary = {
   },
   music: {
     summary: "Start with financial information, move into analysis, and end with resume evidence.",
-    projectId: "business-science-study-system",
     system: {
       eyebrow: "Step 1",
       title: "Read the model first.",
@@ -95,7 +92,7 @@ const routeLibrary = {
       cta: "Capabilities",
       href: sitePath("index.html#capabilities")
     },
-    project: {
+    capability: {
       eyebrow: "Step 3",
       title: "Review the resume evidence.",
       body: "Confirm the education, tools, and experience behind the professional direction.",
@@ -127,7 +124,7 @@ const diagnosticQuestions = [
     prompt: "Which evidence layer should follow?",
     options: [
       { value: "writing", label: "Capabilities", note: "Show the skill map first." },
-      { value: "projects", label: "Operations", note: "Show the readiness layer first." },
+      { value: "operations", label: "Operations", note: "Show the readiness layer first." },
       { value: "music", label: "Study System", note: "Show the broader business-science foundation." }
     ]
   }
@@ -318,7 +315,7 @@ function resolveRouteKey(answers = {}) {
     return "music";
   }
 
-  if (answers.need === "structure" || answers.surface === "projects") {
+  if (answers.need === "structure" || answers.surface === "operations") {
     return "systems";
   }
 
@@ -457,70 +454,6 @@ function renderGuidedTarget(element, step) {
   `;
 }
 
-function setProjectCardState(card, open) {
-  const button = card?.querySelector("[data-project-action]");
-  const response = card?.querySelector("[data-project-response]");
-
-  if (!button || !response) {
-    return;
-  }
-
-  card.classList.toggle("is-expanded", open);
-  button.setAttribute("aria-expanded", String(open));
-  button.textContent = open ? button.dataset.openLabel || button.textContent : button.dataset.closedLabel || button.textContent;
-  response.hidden = !open;
-}
-
-function initProjectInteractions() {
-  const projectCards = document.querySelectorAll(".feature-project");
-
-  if (!projectCards.length) {
-    return;
-  }
-
-  projectCards.forEach((card) => {
-    const button = card.querySelector("[data-project-action]");
-
-    if (!button) {
-      return;
-    }
-
-    setProjectCardState(card, false);
-
-    button.addEventListener("click", () => {
-      const shouldOpen = button.getAttribute("aria-expanded") !== "true";
-
-      projectCards.forEach((otherCard) => {
-        setProjectCardState(otherCard, shouldOpen && otherCard === card);
-      });
-    });
-  });
-}
-
-// On the project page, the system opens one recommended interaction so the user is guided instead of browsing blindly.
-function resolveActiveProjectId(route) {
-  const hashId = window.location.hash.replace("#", "");
-
-  if (hashId && document.getElementById(hashId)?.classList.contains("feature-project")) {
-    return hashId;
-  }
-
-  return route.projectId;
-}
-
-function openRecommendedProject(projectId) {
-  const projectCards = document.querySelectorAll(".feature-project");
-
-  if (!projectCards.length) {
-    return;
-  }
-
-  projectCards.forEach((card) => {
-    const shouldOpen = card.id === projectId && card.dataset.autoOpen !== "false";
-    setProjectCardState(card, shouldOpen);
-  });
-}
-
 function refreshGuidedRoute() {
   const { route, routeKey } = getActiveRoute();
 
@@ -533,19 +466,6 @@ function refreshGuidedRoute() {
     element.textContent = route.summary;
     element.hidden = !route.summary;
   });
-
-  document.querySelectorAll(".feature-project.is-recommended").forEach((element) => {
-    element.classList.remove("is-recommended");
-  });
-
-  const recommendedProjectId = resolveActiveProjectId(route);
-  const recommendedProject = document.getElementById(recommendedProjectId);
-
-  if (recommendedProject) {
-    recommendedProject.classList.add("is-recommended");
-  }
-
-  openRecommendedProject(recommendedProjectId);
 
   document.body.dataset.activeRoute = routeKey;
 }
@@ -569,7 +489,6 @@ function initReturnForms() {
   });
 }
 
-initProjectInteractions();
 renderDiagnostic();
 refreshGuidedRoute();
 initReturnForms();

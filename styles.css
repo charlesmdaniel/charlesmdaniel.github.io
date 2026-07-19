@@ -270,7 +270,6 @@ p {
 
 .hero-actions,
 .cta-actions,
-.project-action-row,
 .entry-result-links {
   display: flex;
   flex-wrap: wrap;
@@ -321,13 +320,11 @@ p {
 }
 
 .hero-panel,
-.project-card,
 .framework-card,
 .skill-column,
 .focus-card,
 .readiness-card,
 .capability-card,
-.project-detail-card,
 .framework-step,
 .about-card,
 .resume-preview,
@@ -341,7 +338,6 @@ p {
 .rail-block,
 .contact-card,
 .next-step-card,
-.feature-project,
 .mini-card,
 .diagram-node {
   border: 1px solid var(--line);
@@ -466,10 +462,8 @@ p {
 .focus-grid,
 .readiness-grid,
 .capabilities-grid,
-.project-showcase-grid,
 .contact-link-grid,
 .skills-grid,
-.project-grid,
 .contact-grid,
 .orientation-grid,
 .process-grid,
@@ -493,7 +487,6 @@ p {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.project-showcase-grid,
 .contact-link-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -503,16 +496,14 @@ p {
 .focus-card,
 .readiness-card,
 .capability-card,
-.project-detail-card,
 .about-card,
-.project-card {
+.next-step-card {
   padding: 1.25rem;
 }
 
 .focus-card,
 .readiness-card,
 .capability-card,
-.project-detail-card,
 .about-card {
   min-width: 0;
 }
@@ -526,8 +517,7 @@ p {
 }
 
 .framework-card p,
-.skill-column li,
-.project-card p {
+.skill-column li {
   margin-bottom: 0;
 }
 
@@ -581,18 +571,6 @@ p {
   font-weight: 700;
 }
 
-.project-card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.project-card-header .eyebrow {
-  margin-bottom: 0;
-}
-
 .status-pill {
   display: inline-flex;
   flex: 0 0 auto;
@@ -624,14 +602,6 @@ p {
   font-size: 0.86rem;
   font-weight: 500;
   overflow-wrap: anywhere;
-}
-
-.project-detail-card h4 {
-  margin: 1rem 0 0.2rem;
-  color: var(--ink);
-  font-size: 0.86rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .section-actions {
@@ -684,16 +654,6 @@ p {
 .skill-column li {
   padding-top: 0.58rem;
   border-top: 1px solid var(--line);
-}
-
-.project-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.project-card {
-  display: grid;
-  align-content: start;
-  gap: 1rem;
 }
 
 .text-link {
@@ -818,8 +778,7 @@ p {
 .next-step-card,
 .rail-block,
 .essay-card,
-.contact-card,
-.feature-project {
+.contact-card {
   padding: 1.25rem;
 }
 
@@ -875,35 +834,14 @@ p {
   gap: 2rem;
 }
 
-.writing-feed,
-.stacked-projects {
+.writing-feed {
   display: grid;
-  gap: 1rem;
-}
-
-.feature-project {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.34fr) minmax(0, 1fr);
   gap: 1rem;
 }
 
 .mini-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 1rem;
-}
-
-.project-proof {
-  margin-bottom: 1rem;
-}
-
-.project-response {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-
-.project-response[hidden] {
-  display: none;
 }
 
 .return-form {
@@ -1110,8 +1048,7 @@ p {
   .split-section,
   .callout-row,
   .entry-layout,
-  .writing-layout,
-  .feature-project {
+  .writing-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1119,7 +1056,6 @@ p {
   .focus-grid,
   .readiness-grid,
   .capabilities-grid,
-  .project-showcase-grid,
   .contact-link-grid,
   .skills-grid,
   .contact-grid,
@@ -1187,7 +1123,6 @@ p {
 
   .hero-actions,
   .cta-actions,
-  .project-action-row,
   .entry-result-links {
     flex-direction: column;
     align-items: stretch;
@@ -1197,10 +1132,8 @@ p {
   .focus-grid,
   .readiness-grid,
   .capabilities-grid,
-  .project-showcase-grid,
   .contact-link-grid,
   .skills-grid,
-  .project-grid,
   .contact-grid,
   .orientation-grid,
   .process-grid,
