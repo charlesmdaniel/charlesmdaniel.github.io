@@ -9,7 +9,7 @@ const navigation = [
   { id: "focus", label: "Focus", href: "index.html#professional-direction" },
   { id: "system", label: "Framework", href: "system.html" },
   { id: "resume", label: "Resume", href: "index.html#resume" },
-  { id: "contact", label: "Contact", href: "contact.html" }
+  { id: "contact", label: "Contact", href: "index.html#contact" }
 ];
 
 // The route map keeps every page pointing to the next clear step.
@@ -73,7 +73,7 @@ const routeLibrary = {
       title: "Move to professional contact.",
       body: "Use the contact page for networking or portfolio review.",
       cta: "Contact",
-      href: sitePath("contact.html#get-started")
+      href: sitePath("index.html#contact")
     }
   },
   music: {
@@ -172,7 +172,7 @@ if (footerMount) {
         <div class="footer-links">
           <a href="${sitePath("system.html")}">Framework</a>
           <a href="${sitePath("index.html#resume")}">Resume</a>
-          <a href="${sitePath("contact.html")}">Contact</a>
+          <a href="${sitePath("index.html#contact")}">Contact</a>
         </div>
       </div>
     </footer>
