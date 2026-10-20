@@ -4,23 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>H</title>
+<title>Charles M. Daniel</title>
 <link rel="icon" href="data:,">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;width:100%;min-height:100%;background:#fff}
-body{min-height:100vh;min-height:100svh;display:grid;place-items:center;overflow:hidden}
-h1{position:relative;margin:0;color:#000;font-family:Arial,Helvetica,sans-serif;font-size:clamp(160px,32vmin,360px);font-weight:900;line-height:1;letter-spacing:0}
-.halo{position:absolute;left:50%;top:.025em;transform:translate(-50%,-100%);width:.7em;height:.18em;border:.015em solid #d9b44a;border-radius:50%;box-shadow:0 0 .025em #ffd86b,0 0 .07em #f4cf62,inset 0 0 .035em #f4cf62;animation:flicker 4.7s linear infinite;pointer-events:none}
-@keyframes flicker{
-0%,18%,22%,25%,53%,57%,100%{opacity:1}
-19%,24%,54%{opacity:.3}
-20%,55%{opacity:.8}
-21%,56%{opacity:.45}
-70%{opacity:.85}
-}
-@media(prefers-reduced-motion:reduce){.halo{animation:none}}
+html,body{margin:0;min-height:100%;background:#fff}
+body{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px}
+main{width:100%;display:grid;place-items:center}
+video{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 48px);max-height:calc(100svh - 48px);background:#000}
 </style>
 </head>
-<body><main aria-label="H with a halo"><h1>H<span class="halo" aria-hidden="true"></span></h1></main></body>
+<body>
+<main><video controls playsinline preload="metadata" poster="/poster.jpg" aria-label="Video" width="512" height="910"><source src="/video.mp4" type="video/mp4"></video></main>
+</body>
 </html>
