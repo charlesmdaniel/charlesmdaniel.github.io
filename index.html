@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#000000">
 <title>Charles M. Daniel</title>
 <link rel="icon" href="data:,">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#fff}
-body{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px}
+html,body{margin:0;width:100%;min-height:100%;background:#000}
+body{min-height:100vh;min-height:100svh;display:grid;place-items:center}
 main{width:100%;display:grid;place-items:center}
-video{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 48px);max-height:calc(100svh - 48px);background:#000}
+img{display:block;width:min(100vw,100vh);width:min(100vw,100svh);height:auto;max-width:100%;object-fit:contain}
 </style>
 </head>
 <body>
-<main><video controls playsinline preload="metadata" poster="/poster.jpg" aria-label="Video" width="512" height="910"><source src="/video.mp4" type="video/mp4"></video></main>
+<main><img src="/photo.jpeg" width="3464" height="3464" alt="There is no right way. Only your way." fetchpriority="high"></main>
 </body>
 </html>
